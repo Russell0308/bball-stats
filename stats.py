@@ -17,7 +17,11 @@ def spec_player():
     api_spec_player = 'https://www.balldontlie.io/api/v1/players/' + player_id
     r_spec_player = requests.get(api_spec_player)
     spec_player = r_spec_player.json()
-    
+    print('Team:', spec_player["team"]["full_name"])
+    print('Position:', spec_player["position"])
+    print('Height:', spec_player["height_feet"], '-', spec_player["height_inches"])
+    print('Weight:', spec_player["weight_pounds"], 'lbs')
+
 
 # Initialize all teams #
 def teams():
@@ -40,4 +44,4 @@ api_stats = 'https://www.balldontlie.io/api/v1/stats'
 api_avg = 'https://www.balldontlie.io/api/v1/season_averages'
 
 
-players()
+spec_player()
