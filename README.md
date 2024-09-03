@@ -1,2 +1,2 @@
-# bball-stats
-A search engine for basketball stats.
+# NBAstats
+NBAstats using nba_api and Python/Flask
