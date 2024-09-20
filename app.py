@@ -1,7 +1,6 @@
 #Flask web app
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-
 #Data API
 from nba_api.stats.library import data
 
@@ -33,9 +32,9 @@ def root():
 @app.route('/search_players_id', methods = ('POST', 'GET'))
 def search_player_id():
     df_players_ids = pd.DataFrame(PlayersIds)
+    print(df_players_ids.columns.values)
     df_players_ids.columns = ['Ids', 'Last_Name', 'First_Name', 'Full_Name', 'Current_Player']
-    df_result = df_players_ids
-
+    print(df_players_ids.columns.values)
     user_query = str(request.form.get('playerName'))
 
     user_search_result = process.extract(user_query, df_players_ids['Full_Name'], limit=5)
@@ -47,6 +46,7 @@ def search_player_id():
 
     df_result = (name_to_id(result_player_name_list[0]))
 
+    print(df_result.head())
     # TODO - return df of players and their ids
 
 

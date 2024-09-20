@@ -4,20 +4,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dash</title>
+	<link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
-<div>
-	<h3>Search for players:</h3>
-	<form action='/search_players_id', method='POST'>
-		<input type='text' name='playerName' placeholder='(Ex Lebron James, Steph, Durant, Jordan, Kobe)'></input>
-		<button type='submit'>Enter</button>
-	</form>
+<div id="playersearch">
+	<div id="playersearchbar">
+		<form action='/search_players_id', method='POST'>
+			<input type='text' name='playerName' placeholder='(Ex Lebron James, Steph, Durant, Jordan, Kobe)'></input>
+			<button type='submit'>Enter</button>
+		</form>
+	</div>
+	<div id="playersearchdf">
+	{% for table in tables %}
+	<table>
+		<thead>
+		</thead>
+		<tbody>
+			{{  table|safe  }}
+		</tbody>
+	</table>	
+	{% endfor %}
+	</div>
 </div>
-
-{% for table in tables %}
-	{{titles[loop.index]}}
-	{{  table|safe  }}
-{% endfor %}
 </body>
 </html>
