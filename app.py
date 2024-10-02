@@ -19,10 +19,18 @@ PlayersIds = data.players
 df_players_ids = pd.DataFrame(PlayersIds)
 
 
-def name_to_id(player_name):
+def name_to_id(players_names):
+    print(players_names)
     df = pd.DataFrame(PlayersIds)
-    df[df[3] == player_name]
-    return df
+    df.columns = ['Ids', 'Last_Name', 'First_Name', 'Full_Name', 'Current_Player']
+    
+    result_df = pd.DataFrame()
+
+    for i in players_names:
+        row = df.loc[df['Full_Name'] == i]
+
+        result_df = pd.concat((result_df, row), axis=0, ignore_index=True)
+    return result_df
 
 @app.route('/')
 def root():
@@ -32,24 +40,15 @@ def root():
 @app.route('/search_players_id', methods = ('POST', 'GET'))
 def search_player_id():
     df_players_ids = pd.DataFrame(PlayersIds)
-    print(df_players_ids.columns.values)
     df_players_ids.columns = ['Ids', 'Last_Name', 'First_Name', 'Full_Name', 'Current_Player']
-    print(df_players_ids.columns.values)
-    user_query = str(request.form.get('playerName'))
 
-    user_search_result = process.extract(user_query, df_players_ids['Full_Name'], limit=5)
+    user_query = str(request.form.get('playerName'))
+    user_search_result = process.extract(user_query, df_players_ids['Full_Name'], limit=10)
 
     result_player_name_list = []
 
     for i in user_search_result:
         result_player_name_list.append(i[0])
+    id_result = (name_to_id(result_player_name_list))
 
-    df_result = (name_to_id(result_player_name_list[0]))
-
-    print(df_result.head())
-    # TODO - return df of players and their ids
-
-
-    #df_result = df_search_results
-
-    return render_template('dash.html', tables=[df_result.to_html(classes='data')], titles=df_result.columns.values)
+    return render_template('dash.html', tables=[id_result.to_html(classes='table', index_names=False)], titles=id_result.columns.values)
