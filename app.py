@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 #Data API
 from nba_api.stats.library import data
+from nba_api.stats.endpoints import playerawards
 
 #DS Library(s)
 import pandas as pd
@@ -52,3 +53,30 @@ def search_player_id():
     id_result = (name_to_id(result_player_name_list))
 
     return render_template('dash.html', tables=[id_result.to_html(classes='table', index_names=False)], titles=id_result.columns.values)
+
+
+@app.route('/a')
+def player_fullscreen():
+    #player_awards = playerawards.PlayerAwards(player_id=1628983)
+    #print(player_awards)
+    return render_template('player_fullscreen.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
