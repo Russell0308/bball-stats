@@ -33,11 +33,12 @@ def name_to_id(players_names):
         result_df = pd.concat((result_df, row), axis=0, ignore_index=True)
     return result_df
 
+# Index view
 @app.route('/')
 def root():
     return render_template('index.html')
 
-
+# Search Ids view
 @app.route('/search_players_id', methods = ('POST', 'GET'))
 def search_player_id():
     df_players_ids = pd.DataFrame(PlayersIds)
@@ -52,10 +53,10 @@ def search_player_id():
         result_player_name_list.append(i[0])
     id_result = (name_to_id(result_player_name_list))
 
-    return render_template('dash.html', tables=[id_result.to_html(classes='table', index_names=False)], titles=id_result.columns.values)
+    return render_template('dash.html', tables=[id_result.to_html(classes='table', index_names=False)])
 
-
-@app.route('/a')
+# NBAstats search
+@app.route('/dash')
 def player_fullscreen():
     #player_awards = playerawards.PlayerAwards(player_id=1628983)
     #print(player_awards)
