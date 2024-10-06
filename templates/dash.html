@@ -4,34 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dash</title>
-	<link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
-<div>
-	<h2>NBA Champions:</h2>
-	<img src='./assets/BostonCeltics.jpeg'/>
-	<h6>Boston Celtics</h6>
-</div>
-
-<div id="playersearch">
-	<div id="playersearchbar">
-		<form action='/search_players_id', method='POST'>
-			<input type='text' name='playerName' placeholder='(Ex Lebron James, Steph, Durant, Jordan, Kobe)'></input>
+	<div id=dash_playersearch_input>
+		<form action='/dash', method='POST'>
+			<input type='text', name='playerName' placeholder='Search...'></input>
 			<button type='submit'>Enter</button>
 		</form>
 	</div>
-	<div id="playersearchdf">
-	{% for table in tables %}
+	<div id=dash_playersearch_table>
+	{$ for table in tables %}
 	<table>
 		<thead>
 		</thead>
 		<tbody>
-			{{  table|safe  }}
+			{{   table|safe   }}
 		</tbody>
-	</table>	
+	</table>
 	{% endfor %}
 	</div>
-</div>
 </body>
+
 </html>
