@@ -1,9 +1,9 @@
 #Flask web app
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+
 #Data API
-from nba_api.stats.library import data
-from nba_api.stats.endpoints import playerawards
+import stat
 
 #DS Library(s)
 import pandas as pd
@@ -33,10 +33,12 @@ def name_to_id(players_names):
         result_df = pd.concat((result_df, row), axis=0, ignore_index=True)
     return result_df
 
+
 # Index view
 @app.route('/')
 def root():
     return render_template('index.html')
+
 
 # Search Ids view
 @app.route('/search_players_id', methods = ('POST', 'GET'))
@@ -53,15 +55,26 @@ def search_player_id():
         result_player_name_list.append(i[0])
     id_result = (name_to_id(result_player_name_list))
 
-    return render_template('dash.html', tables=[id_result.to_html(classes='table', index_names=False)])
+    return render_template('search_player_id.html', tables=[id_result.to_html(classes='table', index_names=False)])
 
-# NBAstats search
+
+# Dashboard view (main user view)
 @app.route('/dash')
-def player_fullscreen():
+def dash():
+    df = pd.DataFrame(PlayersIds)
+    df.columns = ['Ids', 'Last_Name', 'First_Name', 'Full_Name', 'Current_Player']
+    df.head()
+    #df.drop('Last_Name', inplace=True)
+    #df.drop('First_Name', inplace=True)
+    return render_template('dash.html', tables=[df.to_html(classes='table', index_names=False)])
+
+
+# Player Pages
+@app.route('/<player_name_fullscreen>')
+def player_fullscreen(player_name):
     #player_awards = playerawards.PlayerAwards(player_id=1628983)
     #print(player_awards)
     return render_template('player_fullscreen.html')
-
 
 
 
