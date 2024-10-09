@@ -18,16 +18,15 @@ def get_search_result_dash(user_query):
     
     user_search_result = process.extract(user_query, search_results['Full_Name'], limit=10)
 
-    search_result = (user_search_result)
+    result_df = pd.DataFrame()
+
     for i in user_search_result:
-        row = players_df.loc[players_df['Full_Name'] == i]
-
+        row = search_results.loc[i]
+        print(row)
         result_df = pd.concat((result_df, row), axis=0, ignore_index=True)
+        
     return result_df
-
-
-
-
+get_search_result_dash('Russell')
 
 
 
