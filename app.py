@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 #Data API
@@ -28,15 +28,18 @@ def dash():
     user_query = str(request.form.get('playerName'))
     df = pystat.get_search_result_dash(user_query)
 
-    return render_template('dash.html', tables=[df.to_html(classes='table table-stripped', render_links=True, index_names=False)])
+    return render_template('dash.html', tables=[df.to_html(classes='table', render_links=True, index_names=False)])
 
 
 # Player Pages
-@app.route('/<player_name_fullscreen>')
+@app.route('/players/<player_name>')
 def player_fullscreen(player_name):
     #player_awards = playerawards.PlayerAwards(player_id=1628983)
     #print(player_awards)
-    return render_template('player_fullscreen.html')
+    return player_name#render_template('player_fullscreen.html')
+
+
+
 
 
 
