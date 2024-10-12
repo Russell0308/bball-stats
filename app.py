@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 #Data API
-import pystat
+from stats import pystat
 
 #DS Library(s)
 import pandas as pd
@@ -28,15 +28,13 @@ def dash():
     user_query = str(request.form.get('playerName'))
     df = pystat.get_search_result_dash(user_query)
 
-    return render_template('dash.html', tables=[df.to_html(classes='table', render_links=True, index_names=False)])
+    return render_template('dash.html', tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
 
 
 # Player Pages
 @app.route('/players/<player_name>')
 def player_fullscreen(player_name):
-    #player_awards = playerawards.PlayerAwards(player_id=1628983)
-    #print(player_awards)
-    return player_name#render_template('player_fullscreen.html')
+    return render_template('player_fullscreen.html', player_name=player_name)
 
 
 

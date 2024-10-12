@@ -26,12 +26,12 @@ def get_search_result_dash(user_query):
 
     player_links_list = []
     for x, y in zip(search_results['Full_Name'], search_results['Link_Names']):
-        player_links = f'''<a href=" { url_for('player_fullscreen', player_name={y}) } ">{x}</a>'''
+        player_links = f'''<a href=" { url_for('player_fullscreen', player_name=y) } ">{x}</a>'''
         player_links_list.append(player_links)
 
     search_results['player_links'] = player_links_list
     
-    user_search_result = process.extract(user_query, search_results['Full_Name'], limit=10)
+    user_search_result = process.extract(user_query, search_results['Full_Name'], limit=5)
 
     result_df = pd.DataFrame()
     
@@ -40,6 +40,9 @@ def get_search_result_dash(user_query):
     for i in user_search_result:
         row = search_results.loc[search_results['Full_Name'] == i[0]]
         result_df = pd.concat((result_df, row), axis=0, ignore_index=True)
+
+    result_df.drop('Full_Name', axis=1, inplace=True)
+    result_df.drop('Link_Names', axis=1, inplace=True)
         
     return result_df
 

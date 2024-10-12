@@ -1,16 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="en">
+{% extends 'base.html' %}
 
+{% block title %}{{player_name}}{% endblock %}
 
-<head>
-	<meta charset="UTF-8">
-	<title>Player_Name</title>
-	<!-- <link rel="stylesheet href="static/.css"> -->
-</head>
-
-
-<body>
-	
-</body>
-
-</html>
+{% block content %}
+	<form action='/dash', method='POST'>
+	<button type='submit'>Back</button>
+{% endblock %}
