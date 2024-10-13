@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 #Data API
-from stats import pystat
+from stats import stat_server
 
 #DS Library(s)
 import pandas as pd
