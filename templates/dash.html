@@ -1,12 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="en">
+{% extends 'base.html'%}
 
-<head>
-	<meta charset="UTF-8">
-	<title>Dash</title>
-</head>
+{% block title %}Dash{% endblock %}
 
-<body>
+{% block content %}
 	<div id=dash_playersearch_input>
 		<form action='/dash', method='POST'>
 			<input type='text', name='playerName' placeholder='Search...'></input>
@@ -24,6 +20,4 @@
 	</table>
 	{% endfor %}
 	</div>
-</body>
-
-</html>
+{% endblock %}

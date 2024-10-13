@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Directory</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+
+{% block content %}
 	<form action='/dash', method='POST'>
 	<button type='submit'>Dash</button>
 	</form>
-</body>
-</html>
+{% endblock %}
