@@ -26,7 +26,7 @@ def root():
 @app.route('/dash', methods=['GET', 'POST'])
 def dash():
     user_query = str(request.form.get('playerName'))
-    df = pystat.get_search_result_dash(user_query)
+    df = stat_server.get_search_result_dash(user_query)
 
     return render_template('dash.html', tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
 
