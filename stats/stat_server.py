@@ -1,3 +1,5 @@
+import sqlite3
+
 from flask import url_for
 
 from nba_api.stats.library import data
@@ -53,8 +55,6 @@ def get_search_result_dash(user_query):
 
     result_df = pd.DataFrame()
     
-    print(user_search_result)
-
     player_team_abbrev_list = []
     player_number_list = []
 
