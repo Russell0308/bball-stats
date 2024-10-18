@@ -7,9 +7,6 @@ from stats import stat_server
 #DS Library(s)
 import pandas as pd
 
-#Fuzzy Search
-from thefuzz import process
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 DB = SQLAlchemy(app)

@@ -11,12 +11,12 @@ import os
 
 def create_basic_player_data_csv():
     # Does file exist?
-    if os.path.isfile('./CSVs/basic_player_data.csv') == True:
+    if os.path.isfile('./stats/CSVs/basic_player_data.csv') == True:
         pass
     else:                     # Create file
         basic_player_df = pd.DataFrame(data.players)   
         basic_player_df.columns = ['ids', 'last_name', 'first_name', 'full_name', 'is_active']
-        basic_player_df.to_csv('./CSVs/basic_player_data.csv', index=False)
+        basic_player_df.to_csv('./stats/CSVs/basic_player_data.csv', index=False)
 
 
 def get_basic_player_df():
@@ -25,7 +25,7 @@ def get_basic_player_df():
     '''
     create_basic_player_data_csv()
 
-    df = pd.DataFrame('./CSVs/basic_player_data.csv')
+    df = pd.read_csv('./stats/CSVs/basic_player_data.csv')
 
     return df
 
