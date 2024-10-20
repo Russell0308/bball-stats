@@ -50,13 +50,18 @@ def get_search_result_dash(user_query):
             player_team_abbrev = list(player_profile['TEAM_ABBREVIATION'])[-2]
         player_team_abbrev_list.append(player_team_abbrev)
        
-        #team_df = get_teams_data()
-        #team_id = team_df[team_df['abbreviation'] == player_team_abbrev]['id']
+        team_df = statc.get_teams_df()
+        team_id = team_df[team_df['abbreviation'] == player_team_abbrev]['id']
 
-        #team_roster = get_team_roster(team_id).get_data_frames()[0]
+        team_roster = statc.get_teamroster_df(team_id)
 
-        #player_data = team_roster[team_roster['PLAYER'] == player_name]
-        #player_number = player_data['NUM']
+        player_data = team_roster[team_roster['PLAYER'] == player_name]
+
+        if player_data.empty == True:
+            print('not in league anymore')
+        
+        player_number = player_data['NUM']
+        print(player_number)
         #player_number = int(player_number.iloc[0])
         #player_number_list.append(player_number)
 

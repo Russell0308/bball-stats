@@ -27,6 +27,8 @@ def get_basic_player_df():
 
     df = pd.read_csv('./stats/CSVs/basic_player_data.csv')
 
+    
+
     return df
 
 
@@ -61,9 +63,10 @@ def create_player_profile_csv(player_id):
     else:
         try:
             player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()[0])
-            player_profile_df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv')
+            player_profile_df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv', index=False)
         except:
-            print(player_profilev2.PlayerProfile(player_id=player_id))
+            playerprofile = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
+            print(pd.DataFrame(playerprofile[0]).head)
             return Exception
 
     
@@ -75,9 +78,36 @@ def get_player_profile_df(player_id):
     return df
 
 
+def create_team_roster_csv(team_id):
+    if os.path.isfile(f'./stats/CSVs/teamrosters/{team_id}.csv') == True:
+        pass
+    else:
+        team_roster_df = pd.DataFrame(commonteamroster.CommonTeamRoster(team_id).get_data_frames()[0])
+        team_roster_df.to_csv(f'./stats/CSVs/teamrosters/{team_id}.csv', index=False)
 
 
+def get_teamroster_df(team_id):
+    create_team_roster_csv(team_id)
 
+    df = pd.read_csv(f'./stats/CSVs/teamrosters/{team_id}.csv')
+
+    return df
+
+
+def create_teams_data_csv():
+    if os.path.isfile('./stats/CSVs/teams_data.csv') == True:
+        pass
+    else:
+        teams_df = pd.DataFrame(teams.get_teams())
+        teams_df.to_csv('./stats/CSVs/teams_data.csv')
+
+
+def get_teams_df():
+    create_teams_data_csv()
+
+    teams_df = pd.read_csv('./stats/CSVs/teams_data.csv')
+
+    return teams_df
 
 
 

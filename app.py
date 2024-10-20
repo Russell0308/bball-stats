@@ -1,7 +1,8 @@
+#Flask
 from flask import Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-#Data API
+#Stat server
 from stats import stat_server
 
 #DS Library(s)
