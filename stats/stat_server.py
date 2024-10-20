@@ -18,11 +18,6 @@ players_df = players_df[players_df['is_active'] == True]
 players_df.drop('is_active', inplace=True, axis=1)
 
 
-def get_team_roster(team_id):
-    team_roster = commonteamroster.CommonTeamRoster(team_id=team_id)
-    return team_roster
-
-
 def get_search_result_dash(user_query):
     user_search_result = process.extract(user_query, players_df['full_name'], limit=5)
 
