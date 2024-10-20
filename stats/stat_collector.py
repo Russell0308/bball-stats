@@ -1,8 +1,7 @@
 import sqlite3
 
-from nba_api.stats.library import data
 from nba_api.stats.endpoints import playerprofilev2, commonteamroster
-from nba_api.stats.static import teams
+from nba_api.stats.static import teams, players
 
 import pandas as pd
 
@@ -14,7 +13,7 @@ def create_basic_player_data_csv():
     if os.path.isfile('./stats/CSVs/basic_player_data.csv') == True:
         pass
     else:                     # Create file
-        basic_player_df = pd.DataFrame(data.players)   
+        basic_player_df = pd.DataFrame(players.get_active_players())   
         basic_player_df.columns = ['ids', 'last_name', 'first_name', 'full_name', 'is_active']
         basic_player_df.to_csv('./stats/CSVs/basic_player_data.csv', index=False)
 
@@ -24,7 +23,7 @@ def get_basic_player_df():
     Gets (id, last name, first name, full name, activity)
     '''
     create_basic_player_data_csv()
-
+    update_basic_player_df()
     df = pd.read_csv('./stats/CSVs/basic_player_data.csv')
 
     
@@ -32,13 +31,13 @@ def get_basic_player_df():
     return df
 
 
-#def update_basic_player_df():
-#    location = './stats/CSVs/basic_player_data.csv'
-#    
-#    basic_player_df = pd.DataFrame(data.players)
-#    basic_player_df.columns = ['ids', 'last_name', 'first_name', 'full_name', 'is_active']
-#
-#    basic_player_df.to_csv(location, index=False)
+def update_basic_player_df():
+    location = './stats/CSVs/basic_player_data.csv'
+    
+    basic_player_df = pd.DataFrame(players.get_active_players())
+    basic_player_df.columns = ['ids', 'full_name', 'first_name', 'last_name', 'is_active']
+
+    basic_player_df.to_csv(location, index=False)
 
 
 def create_basic_teams_csv():
