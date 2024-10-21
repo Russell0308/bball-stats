@@ -40,24 +40,19 @@ def get_search_result_dash(user_query):
         player_id = player_row['ids'].iloc[0]
 
         player_profile = statc.get_player_profile_df(player_id)
-        player_team_abbrev = list(player_profile['TEAM_ABBREVIATION'])[-1]
-        if player_team_abbrev == 'TOT':
-            player_team_abbrev = list(player_profile['TEAM_ABBREVIATION'])[-2]
-        player_team_abbrev_list.append(player_team_abbrev)
+        print(player_profile)
+        #team_id = player_profile[-1]['PLAYER_TEAM_ID'].iloc[0]
        
-        team_df = statc.get_teams_df()
-        team_id = team_df[team_df['abbreviation'] == player_team_abbrev]['id']
+        #team_roster = statc.get_teamroster_df(team_id)
 
-        team_roster = statc.get_teamroster_df(team_id)
+        #player_data = team_roster[team_roster['PLAYER'] == player_name]
 
-        player_data = team_roster[team_roster['PLAYER'] == player_name]
-
-        if player_data.empty == True:
-            print('not in league anymore')
+        #if player_data.empty == True:
+        #    print('not in league anymore')
         
-        player_number = player_data['NUM']
-        print(player_number)
-        #player_number = int(player_number.iloc[0])
+        #player_number = player_data['NUM']
+        #print(player_number)
+       #player_number = int(player_number.iloc[0])
         #player_number_list.append(player_number)
 
     for x, y in zip(result_df['full_name'], result_df['link_names']):
@@ -65,7 +60,7 @@ def get_search_result_dash(user_query):
         player_links_list.append(player_links)
 
     result_df['player_link'] = player_links_list
-    result_df['Abbreviations'] = player_team_abbrev_list
+    #result_df['Abbreviations'] = player_team_abbrev_list
     #result_df['Player_Number'] = player_number_list
     result_df.drop('full_name', axis=1, inplace=True)
     result_df.drop('link_names', axis=1, inplace=True)

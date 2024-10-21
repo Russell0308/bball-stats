@@ -61,7 +61,7 @@ def create_player_profile_csv(player_id):
         pass
     else:
         try:
-            player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()[0])
+            player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames())
             player_profile_df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv', index=False)
         except:
             playerprofile = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
