@@ -56,6 +56,12 @@ def get_teams_df():
     return df
 
 
+def get_players_team_id(player_id):
+    player_profile = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()[-1])
+    players_team_id = player_profile['PLAYER_TEAM_ID'].iloc[0]
+    return players_team_id
+
+
 def create_player_profile_csv(player_id):
     if os.path.isfile(f'./stats/CSVs/playerprofiles/{player_id}.csv') == True:
         pass
@@ -65,7 +71,7 @@ def create_player_profile_csv(player_id):
             player_profile_df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv', index=False)
         except:
             playerprofile = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-            print(pd.DataFrame(playerprofile[0]).head)
+            print(playerprofile[-1]['PLAYER_TEAM_ID'])
             return Exception
 
     
