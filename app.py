@@ -13,7 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 DB = SQLAlchemy(app)
 
 
-
 # Index view
 @app.route('/')
 def root():
