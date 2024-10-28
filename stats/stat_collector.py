@@ -116,8 +116,12 @@ def get_teams_df():
 
 
 def create_search_csv():
-    pass
-
+    if os.path.isfile('./stats/CSVs/search.csv') == True:
+        pass
+    else:
+        search_df = get_basic_player_df()
+        search
+        
 
 def get_search_df():
     pass
