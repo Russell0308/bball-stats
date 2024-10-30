@@ -9,35 +9,17 @@
 	</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class='pgstats'>
+{% for table in tables %}
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		{{ table|safe }}
+	</tbody>
+</table>
+{% endfor %}
+</div>
 
 
 
