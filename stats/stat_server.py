@@ -84,6 +84,8 @@ def get_id_from_name(player_name):
 def get_current_season_per_game(player_id):
     df = statc.get_player_profile_df(player_id)
     df.drop('Unnamed: 0', inplace=True, axis=1)
+    df.drop('TEAM_ID', inplace=True, axis=1)
+    df.drop('LEAGUE_ID', inplace=True, axis=1)
     return df
 
 
