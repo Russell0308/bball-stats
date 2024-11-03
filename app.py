@@ -31,8 +31,10 @@ def dash():
 # Player Pages
 @app.route('/players/<player_name>')
 def player_fullscreen(player_name):
-    df = stat_server.get_player_profile_season_pg()
-    return render_template('player_fullscreen.html', player_name=player_name, table=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
+    player_name_clean = player_name.replace('_', ' ')
+    player_id = stat_server.get_id_from_name(player_name_clean)
+    df = stat_server.get_current_season_per_game(player_id)
+    return render_template('player_fullscreen.html', player_name=player_name, tables=[df.to_html(classes='table', escape=False, index=False, header=True)])
 
 
 

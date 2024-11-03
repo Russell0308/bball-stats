@@ -25,9 +25,7 @@ def get_basic_player_df():
     create_basic_player_data_csv()
     update_basic_player_df()
     df = pd.read_csv('./stats/CSVs/basic_player_data.csv')
-
     
-
     return df
 
 

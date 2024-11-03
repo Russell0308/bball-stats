@@ -10,8 +10,9 @@ import pandas as pd
 
 import re
 
+import sys
 
-players_df = pd.DataFrame(statc.get_basic_player_df())
+players_df = statc.get_basic_player_df()
 players_df.drop('last_name', inplace=True, axis=1)
 players_df.drop('first_name', inplace=True, axis=1)
 players_df = players_df[players_df['is_active'] == True]
@@ -70,9 +71,47 @@ def get_search_result_dash(user_query):
     result_df.drop('full_name', axis=1, inplace=True)
     result_df.drop('link_names', axis=1, inplace=True)
 
-
-        
     return result_df.iloc[:5]
+
+
+def get_id_from_name(player_name):
+    df = players_df
+    player_id = df[df['full_name'] == player_name]
+    player_id = (player_id['ids'].iloc[0])
+    return player_id
+
+
+def get_current_season_per_game(player_id):
+    df = statc.get_player_profile_df(player_id)
+    df.drop('Unnamed: 0', inplace=True, axis=1)
+    return df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
