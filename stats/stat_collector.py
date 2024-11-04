@@ -81,6 +81,12 @@ def get_player_profile_df(player_id):
     return df
 
 
+def update_player_profile():
+    player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames())
+    
+
+
+
 def create_team_roster_csv(team_id):
     if os.path.isfile(f'./stats/CSVs/teamrosters/{team_id}.csv') == True:
         pass

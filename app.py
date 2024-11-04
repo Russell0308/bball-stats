@@ -33,7 +33,8 @@ def dash():
 def player_fullscreen(player_name):
     player_name_clean = player_name.replace('_', ' ')
     player_id = stat_server.get_id_from_name(player_name_clean)
-    df = stat_server.get_current_season_per_game(player_id)
+    df = stat_server.get_career_totals(player_id)
+    print(player_id)
     return render_template('player_fullscreen.html', player_name=player_name, tables=[df.to_html(classes='table', escape=False, index=False, header=True)])
 
 
