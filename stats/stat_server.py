@@ -98,6 +98,8 @@ def get_career_totals(player_id):
     df.drop('PLAYER_ID', inplace=True, axis=1)
 
     df.columns = ['YEAR', 'TEAM', 'AGE', 'GP', 'GS', 'MIN', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+
+
     return df
 
 

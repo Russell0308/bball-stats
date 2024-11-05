@@ -8,6 +8,8 @@ import pandas as pd
 import os
 
 
+# Basic player data
+
 def create_basic_player_data_csv():
     # Does file exist?
     if os.path.isfile('./stats/CSVs/basic_player_data.csv') == True:
@@ -38,35 +40,26 @@ def update_basic_player_df():
     basic_player_df.to_csv(location, index=False)
 
 
-def create_basic_teams_csv():
-    if os.path.isfile('./stats/CSVs/basic_teams.csv') == True:
-        pass
-    else:
-        basic_teams_df = pd.DataFrame(teams.get_teams())    
-        basic_teams_df.to_csv('./stats/CSVs/basic_teams.csv', index=False)
-
-
-def get_teams_df():
-    create_basic_teams_csv()
-    
-    df = pd.read_csv('./stats/CSVs/basic_teams.csv')
-    
-    return df
-
-
+# Team ID
 def get_players_team_id(player_id):
     player_profile = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()[-1])
     players_team_id = player_profile['PLAYER_TEAM_ID'].iloc[0]
     return players_team_id
 
 
+# Player Profile data
 def create_player_profile_csv(player_id):
+    player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
+    data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regular Season', 'Career Totals Post Season by Year', 'Career Totals Post Season', 'Career Totals All-Star Games by Year', 'Career Totals All-Star Games', 'Career Totals College by Year', 'Career Totals College', 'Career Totals Preseason by Year', 'Career Totals Preseason', 'Career Rankings by Year', 'Career Playoff Ranking by Year', 'Season Highs', 'Career Highs', 'Next Game']
+
     if os.path.isfile(f'./stats/CSVs/playerprofiles/{player_id}.csv') == True:
-        pass
+        df.to_csv(f'./stats/CSVs/playerprofile/{profile_id}/')
     else:
         try:
-            player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames())
-            player_profile_df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv', index=False)
+            for x, i in zip(data_names_list, player_profile_list):
+                df = pd.DataFrame(i)
+                df.to_csv(f'./stats/CSVs/playerprofile/{profile_id}/{x}')
+                
         except:
             playerprofile = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
             print(playerprofile[-1]['PLAYER_TEAM_ID'])
@@ -75,18 +68,22 @@ def create_player_profile_csv(player_id):
     
 def get_player_profile_df(player_id):
     create_player_profile_csv(player_id)
+    update_player_profile(player_id)
 
     df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv')
 
     return df
 
 
-def update_player_profile():
-    player_profile_df = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames())
+def update_player_profile(player_id):
+    player_profile_df = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
+
+    player_profile_df.to_csv(f'./stats/CSVs/playerprofile/{player_id}/{file_name}', index=False)
+
     
 
 
-
+# Team Roster
 def create_team_roster_csv(team_id):
     if os.path.isfile(f'./stats/CSVs/teamrosters/{team_id}.csv') == True:
         pass
@@ -103,6 +100,7 @@ def get_teamroster_df(team_id):
     return df
 
 
+# Basic Team data
 def create_teams_data_csv():
     if os.path.isfile('./stats/CSVs/teams_data.csv') == True:
         pass
@@ -119,6 +117,7 @@ def get_teams_df():
     return teams_df
 
 
+# Search results data
 def create_search_csv():
     if os.path.isfile('./stats/CSVs/search.csv') == True:
         pass
