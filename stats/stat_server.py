@@ -81,6 +81,15 @@ def get_id_from_name(player_name):
     return player_id
 
 
+def get_name_from_id(player_id):
+    df = players_df
+    player_name = df[df['ids'] == player_id]
+    print('id:', player_id)
+    print(df[df['ids'] == player_id])
+    #player_name = (player_name['full_name'].iloc[0])
+    return player_name
+
+
 def get_career_totals(player_id):
     df = statc.get_player_profile_df(player_id)
     df.drop('Unnamed: 0', inplace=True, axis=1)
@@ -88,8 +97,11 @@ def get_career_totals(player_id):
     df.drop('LEAGUE_ID', inplace=True, axis=1)
     df.drop('PLAYER_ID', inplace=True, axis=1)
 
-    df.columns = ['Year', 'Team', 'Age', 'GP', 'GS', 'Min', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+    df.columns = ['YEAR', 'TEAM', 'AGE', 'GP', 'GS', 'MIN', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
     return df
+
+
+
 
 
 
