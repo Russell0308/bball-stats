@@ -48,39 +48,30 @@ def get_players_team_id(player_id):
 
 
 # Player Profile data
+data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regular Season', 'Career Totals Post Season by Year', 'Career Totals Post Season', 'Career Totals All-Star Games by Year', 'Career Totals All-Star Games', 'Career Totals College by Year', 'Career Totals College', 'Career Totals Preseason by Year', 'Career Totals Preseason', 'Career Rankings by Year', 'Career Playoff Ranking by Year', 'Season Highs', 'Career Highs', 'Next Game']
+
 def create_player_profile_csv(player_id):
     player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-    data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regular Season', 'Career Totals Post Season by Year', 'Career Totals Post Season', 'Career Totals All-Star Games by Year', 'Career Totals All-Star Games', 'Career Totals College by Year', 'Career Totals College', 'Career Totals Preseason by Year', 'Career Totals Preseason', 'Career Rankings by Year', 'Career Playoff Ranking by Year', 'Season Highs', 'Career Highs', 'Next Game']
-
-    if os.path.isfile(f'./stats/CSVs/playerprofiles/{player_id}.csv') == True:
-        df.to_csv(f'./stats/CSVs/playerprofile/{profile_id}/')
-    else:
-        try:
-            for x, i in zip(data_names_list, player_profile_list):
-                df = pd.DataFrame(i)
-                df.to_csv(f'./stats/CSVs/playerprofile/{profile_id}/{x}')
-                
-        except:
-            playerprofile = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-            print(playerprofile[-1]['PLAYER_TEAM_ID'])
-            return Exception
-
     
-def get_player_profile_df(player_id):
-    create_player_profile_csv(player_id)
-    update_player_profile(player_id)
+    for x, i in zip(data_names_list, player_profile_list):
+        df = pd.DataFrame(i)
+        if os.path.isdir(f'./stats/CSVs/playerprofile/{player_id}') == True:
+            pass
+        else:
+            print(os.getcwd())
+            os.mkdir(f'./stats/CSVs/playerprofile/{player_id}')
 
-    df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}.csv')
+
+        df.to_csv(f'./stats/CSVs/playerprofile/{player_id}/{x}.csv')
+
+
+def get_player_profile_df(player_id, df_name):
+    create_player_profile_csv(player_id)  # works as an update csv
+
+    df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}/{df_name}.csv')
+
 
     return df
-
-
-def update_player_profile(player_id):
-    player_profile_df = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-
-    player_profile_df.to_csv(f'./stats/CSVs/playerprofile/{player_id}/{file_name}', index=False)
-
-    
 
 
 # Team Roster

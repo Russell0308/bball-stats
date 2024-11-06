@@ -90,14 +90,11 @@ def get_name_from_id(player_id):
     return player_name
 
 
-def get_career_totals(player_id):
-    df = statc.get_player_profile_df(player_id)
-    df.drop('Unnamed: 0', inplace=True, axis=1)
-    df.drop('TEAM_ID', inplace=True, axis=1)
-    df.drop('LEAGUE_ID', inplace=True, axis=1)
-    df.drop('PLAYER_ID', inplace=True, axis=1)
+def get_career_totals_by_season(player_id):
+    for i in statc.data_names_list:
+        print(i)
+        df = statc.get_player_profile_df(player_id, i)
 
-    df.columns = ['YEAR', 'TEAM', 'AGE', 'GP', 'GS', 'MIN', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
 
 
     return df
