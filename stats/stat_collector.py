@@ -55,14 +55,14 @@ def create_player_profile_csv(player_id):
     
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
-        if os.path.isdir(f'./stats/CSVs/playerprofile/{player_id}') == True:
+        if os.path.isdir(f'./stats/CSVs/playerprofiles/{player_id}') == True:
             pass
         else:
             print(os.getcwd())
-            os.mkdir(f'./stats/CSVs/playerprofile/{player_id}')
+            os.mkdir(f'./stats/CSVs/playerprofiles/{player_id}')
 
 
-        df.to_csv(f'./stats/CSVs/playerprofile/{player_id}/{x}.csv')
+        df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/{x}.csv')
 
 
 def get_player_profile_df(player_id, df_name):
