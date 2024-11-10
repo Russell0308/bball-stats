@@ -9,13 +9,24 @@
 	</form>
 	</div>
 
-
+<div>
 <img src='/players/images/{{player_id}}.png' alt='Picture of {{player_name}}'>
-<p>{{player_name}}</p>
+<p>{{player_name}} <br>
+{{player_position}} | #{{player_number}} <br>
+Height: {{player_height}} Weight: {{player_weight}}lbs <br>
+{{team_name}}
 
+</p>
+</div>
 
 <div class='pgstats'>
-{% for table in tables %}
+<!-- <form method='POST'>
+<input type='hidden'>
+<button type='submit'>Per Game</button>
+<button type='submit'>Totals</button>
+</form>
+-->
+{% for table in tablepgstats %}
 <table>
 	<thead>
 	</thead>

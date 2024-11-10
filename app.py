@@ -36,8 +36,12 @@ def dash():
 def player_fullscreen(player_name):
     player_name_clean = player_name.replace('_', ' ')
     player_id = stat_server.get_id_from_name(player_name_clean)
-    df = stat_server.get_career_totals_by_season(player_id)
-    return render_template('player_fullscreen.html', player_name=player_name, player_id=player_id, tables=[df.to_html(classes='table', escape=False, index=False, header=True)])
+    player_number = stat_server.get_player_number(player_id)
+    team_name = stat_server.get_team_name(player_id)
+    player_pos = stat_server.get_player_position(player_id)
+    height, weight = stat_server.get_player_height_weight(player_id)
+    df = stat_server.get_career_per_game_by_season(player_id)
+    return render_template('player_fullscreen.html', player_name=player_name_clean, player_id=player_id, player_number=player_number, player_position=player_pos, player_height=height, player_weight=weight, team_name=team_name, tablepgstats=[df.to_html(classes='table', escape=False, index=False, header=True)])
 
 
 # Images

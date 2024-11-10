@@ -20,7 +20,7 @@ players_df.drop('is_active', inplace=True, axis=1)
 
 
 def get_search_result_dash(user_query):
-    user_search_result = process.extract(user_query, players_df['full_name'], limit=10) #Fuzzy find top ten active players names using user search 'term'/'name'. 
+    user_search_result = process.extract(user_query, players_df['full_name'], limit=10) #Fuzzy find top ten active players names using user search 'name'. 
 
     result_df = pd.DataFrame()
 
@@ -49,15 +49,8 @@ def get_search_result_dash(user_query):
             continue
         player_team_abbrev_list.append(teams['abbreviation'].iloc[0])
 
-        team_roster = statc.get_teamroster_df(players_team_id)
+        player_number = statc.get_player_number(player_id)
 
-        player_data = team_roster[team_roster['PLAYER'] == player_name]
-
-        player_number = player_data['NUM']
-        if player_number.empty == True:
-            player_number = 'N/A'
-        else:
-            player_number = int(player_number.iloc[0])
         player_number_list.append(player_number)
 
     for x, y in zip(result_df['full_name'], result_df['link_names']):
@@ -90,16 +83,49 @@ def get_name_from_id(player_id):
     return player_name
 
 
-def get_career_totals_by_season(player_id):
-    for i in statc.data_names_list:
-        print(i)
-        df = statc.get_player_profile_df(player_id, i)
+def get_career_per_game_by_season(player_id):
+    df_name = statc.data_names_list[0]
+    df = statc.get_player_profile_df(player_id, df_name)
 
 
 
     return df
 
 
+def get_player_number(player_id):
+    return statc.get_player_number(player_id)
+
+
+def get_team_name(player_id):
+    team_id = statc.get_players_team_id(player_id)
+
+    df = statc.get_teams_df()
+
+    team = df[df['id'] == team_id]
+
+    team_name = team['full_name'].iloc[0]
+
+    return team_name
+
+
+def get_player_position(player_id):
+    team_id = statc.get_players_team_id(player_id)
+
+    teamroster_df = statc.get_teamroster_df(team_id)
+
+    player_row = teamroster_df[teamroster_df['PLAYER_ID'] == player_id]
+
+    return player_row['POSITION'].iloc[0]
+
+
+def get_player_height_weight(player_id):
+    team_id = statc.get_players_team_id(player_id)
+
+    teamroster_df = statc.get_teamroster_df(team_id)
+
+    player_row = teamroster_df[teamroster_df['PLAYER_ID'] == player_id]
+
+    return player_row['HEIGHT'].iloc[0], player_row['WEIGHT'].iloc[0]
 
 
 

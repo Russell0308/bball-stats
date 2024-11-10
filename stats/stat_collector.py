@@ -3,6 +3,8 @@ import sqlite3
 from nba_api.stats.endpoints import playerprofilev2, commonteamroster
 from nba_api.stats.static import teams, players
 
+from stats import stat_server
+
 import pandas as pd
 
 import os
@@ -31,6 +33,21 @@ def get_basic_player_df():
     return df
 
 
+def get_player_number(player_id):
+    team_id = get_players_team_id(player_id)
+    
+    teamroster = get_teamroster_df(team_id)
+
+    players_row = teamroster[teamroster['PLAYER_ID'] == player_id]
+
+    try: 
+        number = players_row['NUM'].iloc[0]
+        number = int(number)
+    except Exception:
+        return Exception
+    return number
+
+
 def update_basic_player_df():
     location = './stats/CSVs/basic_player_data.csv'
     
@@ -42,7 +59,7 @@ def update_basic_player_df():
 
 # Team ID
 def get_players_team_id(player_id):
-    player_profile = pd.DataFrame(playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()[-1])
+    player_profile = get_player_profile_df(player_id, 'Next Game')
     players_team_id = player_profile['PLAYER_TEAM_ID'].iloc[0]
     return players_team_id
 
@@ -112,9 +129,6 @@ def get_teams_df():
 def create_search_csv():
     if os.path.isfile('./stats/CSVs/search.csv') == True:
         pass
-    else:
-        search_df = get_basic_player_df()
-        search
         
 
 def get_search_df():
