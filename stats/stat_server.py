@@ -87,7 +87,31 @@ def get_career_per_game_by_season(player_id):
     df_name = statc.data_names_list[0]
     df = statc.get_player_profile_df(player_id, df_name)
 
+    print(df.columns)
+    df.drop('Unnamed: 0', axis=1, inplace=True)
+    df.drop('PLAYER_ID', axis=1, inplace=True)
+    df.drop('LEAGUE_ID', axis=1, inplace=True)
+    df.drop('TEAM_ID', axis=1, inplace=True)
+    df.drop('PLAYER_AGE', axis=1, inplace=True)
 
+    df.columns = ['YEAR', 'TEAM', 'GP', 'GS', 'MIN', 'FGM', 'FGA', 'FG%', 'FG3M', 'FG3A', 'FG3%', 'FTM', 'FTA', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+
+    df['PTS'] = round(df['PTS']/df['GP'], 1)
+    df['PF'] = round(df['PF']/df['GP'], 1)
+    df['TOV'] = round(df['TOV']/df['GP'], 1)
+    df['BLK'] = round(df['BLK']/df['GP'], 1)
+    df['STL'] = round(df['STL']/df['GP'], 1)
+    df['AST'] = round(df['AST']/df['GP'], 1)
+    df['REB'] = round(df['REB']/df['GP'], 1)
+    df['DREB'] = round(df['DREB']/df['GP'], 1)
+    df['OREB'] = round(df['OREB']/df['GP'], 1)
+    df['FTA'] = round(df['FTA']/df['GP'], 1)
+    df['FTM'] = round(df['FTM']/df['GP'], 1)
+    df['FG3A'] = round(df['FG3A']/df['GP'], 1)
+    df['FG3M'] = round(df['FG3M']/df['GP'], 1)
+    df['FGA'] = round(df['FGA']/df['GP'], 1)
+    df['FGM'] = round(df['FGM']/df['GP'], 1)
+    df['MIN'] = round(df['MIN']/df['GP'], 1)
 
     return df
 
