@@ -3,14 +3,19 @@
 {% block title %}Dash{% endblock %}
 
 {% block content %}
-	<div id=dash_playersearch_input>
+
+	<div id=champs_img>
+		<img src={{ url_for('static', filename='assets/BostonCeltics2.png') }} alt=Champions>
+	</div>	
+
+
+
+	<div id=dash_playersearch>
 		<form action='/dash', method='POST'>
 			<input type='text', name='playerName' placeholder='Search...'></input>
 			<button type='submit'>Enter</button>
 		</form>
-	</div>
 
-	<div id=dash_playersearch_table>
 	{% for table in tables %}
 	<table>
 		<thead>
