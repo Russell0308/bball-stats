@@ -111,7 +111,7 @@ def get_career_per_game_by_season(player_id):
     df['FG3M'] = round(df['FG3M']/df['GP'], 1)
     df['FGA'] = round(df['FGA']/df['GP'], 1)
     df['FGM'] = round(df['FGM']/df['GP'], 1)
-    df['MIN'] = round(df['MIN']/df['GP'], 1)
+    df['MIN'] = round(df['MIN']/df['GP']. 1)
 
     return df
 
