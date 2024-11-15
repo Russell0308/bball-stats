@@ -48,6 +48,7 @@ def player_fullscreen(player_name):
 # Images
 @app.route('/static/assets/<filename>')
 def images(player_id):
+    player_id = player_id
     return send_from_directory('static/assets', filename)
 
 
