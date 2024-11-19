@@ -28,7 +28,9 @@ def dash():
     user_query = str(request.form.get('playerName'))
     df = stat_server.get_search_result_dash(user_query)
 
-    return render_template('dash.html', tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
+    mvp, fmvp, dpoty, cpoty, roty, coty = stat_server.get_awardwinners()
+
+    return render_template('dash.html', mvp=mvp, fmvp=fmvp, dpoty=dpoty, cpoty=cpoty, roty=roty, coty=coty, tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
 
 
 # Player Pages

@@ -3,11 +3,23 @@
 {% block title %}Dash{% endblock %}
 
 {% block content %}
-
+	<div id=last_season>
+		<h2>2023 - 2024 Season</h2>
 	<div id=champs_img>
+		<h3>Champions</h3>
 		<img src={{ url_for('static', filename='assets/BostonCeltics2.png') }} alt=Champions>
 	</div>	
+	<p>Boston Celtics</p>
 
+		<h4>Award Winners</h4>
+		<p>MVP: {{ mvp }}</p>
+		<p>FMVP: {{ fmvp }}</p>
+		<p>DPOTY: {{ dpoty }}</p>
+		<p>CPOTY: {{ cpoty }}</p>
+		<p>ROTY: {{ roty }}</p>
+		<p>COTY: {{ coty }}</p>
+
+	</div>
 
 
 	<div id=dash_playersearch>

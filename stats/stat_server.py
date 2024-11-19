@@ -152,6 +152,20 @@ def get_player_height_weight(player_id):
     return player_row['HEIGHT'].iloc[0], player_row['WEIGHT'].iloc[0]
 
 
+def get_awardwinners():
+    mvp = 'Jokic'
+    fmvp = 'Brown'
+    dpoty = 'Gobert'
+    cpoty = 'Curry'
+    roty = 'Wembenyama'
+    coty = 'Daigneault'
+
+
+    return mvp, fmvp, dpoty, cpoty, roty, coty
+
+
+def get_player_awards():
+    pass
 
 
 

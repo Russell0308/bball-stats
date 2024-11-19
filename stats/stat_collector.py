@@ -1,9 +1,9 @@
 import sqlite3
 
-from nba_api.stats.endpoints import playerprofilev2, commonteamroster
+from nba_api.stats.endpoints import playerprofilev2, commonteamroster, playerawards
 from nba_api.stats.static import teams, players
 
-from stats import stat_server
+#from stats import stat_server
 
 import pandas as pd
 
@@ -69,7 +69,7 @@ data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regula
 
 def create_player_profile_csv(player_id):
     player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-    
+
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
         if os.path.isdir(f'./stats/CSVs/playerprofiles/{player_id}') == True:
@@ -83,7 +83,11 @@ def create_player_profile_csv(player_id):
 
 
 def get_player_profile_df(player_id, df_name):
-    create_player_profile_csv(player_id)  # works as an update csv
+    try:
+        create_player_profile_csv(player_id)  # works as an update csv
+
+    except Exception: 
+        print(Exception)
 
     df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}/{df_name}.csv')
 
@@ -132,9 +136,23 @@ def create_search_csv():
         
 
 def get_search_df():
+    create_search_csv()
     pass
 
 
+# Player awards
+def create_player_awards_csv(player_id):
+    df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()
+
+    df.to_csv('./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+
+
+def get_player_awards_df(player_id):
+    create_player_awards_csv(player_id)
+    
+    df = pd.read_csv('./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+
+    return df
 
 
 
