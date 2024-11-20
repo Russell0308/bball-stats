@@ -142,15 +142,15 @@ def get_search_df():
 
 # Player awards
 def create_player_awards_csv(player_id):
-    df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()
+    df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()[0]
 
-    df.to_csv('./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+    df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
 
 
 def get_player_awards_df(player_id):
     create_player_awards_csv(player_id)
     
-    df = pd.read_csv('./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+    df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
 
     return df
 

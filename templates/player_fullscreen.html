@@ -3,6 +3,7 @@
 {% block title %}{{player_name}}{% endblock %}
 
 {% block content %}
+<div id='Left-Column'>
 	<div id='back_button'>
 	<form action='/dash', method='POST'>
 	<button type='submit'>Back</button>
@@ -18,7 +19,21 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 
 </p>
 </div>
+<div id='awardstable'>
+{% for table in tablePawards %}
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		{{ table|safe }}
+	</tbody>
+</table>
+{% endfor %}
+</div>
 
+</div>
+
+<div id='Right-Column'
 <div id='pgstats'>
 <!-- <form method='POST'>
 <input type='hidden'>
@@ -36,6 +51,7 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 </table>
 {% endfor %}
 </div>
+</dij>
 
 
 

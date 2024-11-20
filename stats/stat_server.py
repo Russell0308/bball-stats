@@ -164,9 +164,9 @@ def get_awardwinners():
     return mvp, fmvp, dpoty, cpoty, roty, coty
 
 
-def get_player_awards():
-    pass
-
+def get_player_awards(player_id):
+    return statc.get_player_awards_df(player_id)
+    
 
 
 
