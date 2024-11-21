@@ -165,7 +165,39 @@ def get_awardwinners():
 
 
 def get_player_awards(player_id):
-    return statc.get_player_awards_df(player_id)
+    df = statc.get_player_awards_df(player_id)
+
+    df.drop('Unnamed: 0', inplace=True, axis=1)
+    df.drop('PERSON_ID', inplace=True, axis=1)
+    df.drop('FIRST_NAME', inplace=True, axis=1)
+    df.drop('LAST_NAME', inplace=True, axis=1)
+
+    new_df = pd.DataFrame()
+    
+    olympic_gold_medal = 0
+    nba_champion = 0
+    nba_allstar = 0
+    all_nba = 0
+
+
+    for i in df['DESCRIPTION']:
+        if i == 'Olympic Gold Medal':
+            olympic_gold_medal += 1
+        elif i == 'NBA Champion':
+            nba_champion += 1
+        elif i == 'NBA All-Star':
+            nba_allstar += 1
+        elif i == 'All-NBA':
+            all_nba += 1
+
+    new_df['Olympic Gold Medal'] = olympic_gold_medal
+    new_df['NBA Champion'] = nba_champion
+    new_df['NBA All-Star'] = nba_allstar
+    new_df['All-NBA'] = all_nba
+
+    print(new_df.head)
+
+    return new_df
     
 
 
