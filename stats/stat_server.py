@@ -176,6 +176,8 @@ def get_player_awards(player_id):
     
     olympic_gold_medal = 0
     nba_champion = 0
+    mvp = 0
+    fmvp = 0
     nba_allstar = 0
     all_nba = 0
 
@@ -189,6 +191,10 @@ def get_player_awards(player_id):
             nba_allstar += 1
         elif i == 'All-NBA':
             all_nba += 1
+        elif i == 'MVP':
+            mvp += 1
+        elif i == 'FMVP':
+            fmvp += 1
 
     new_df['Olympic Gold Medal'] = olympic_gold_medal
     new_df['NBA Champion'] = nba_champion
@@ -197,7 +203,7 @@ def get_player_awards(player_id):
 
     print(new_df.head)
 
-    return new_df
+    return df
     
 
 
