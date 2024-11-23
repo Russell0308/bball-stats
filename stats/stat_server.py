@@ -77,9 +77,6 @@ def get_id_from_name(player_name):
 def get_name_from_id(player_id):
     df = players_df
     player_name = df[df['ids'] == player_id]
-    print('id:', player_id)
-    print(df[df['ids'] == player_id])
-    #player_name = (player_name['full_name'].iloc[0])
     return player_name
 
 
@@ -87,7 +84,6 @@ def get_career_per_game_by_season(player_id):
     df_name = statc.data_names_list[0]
     df = statc.get_player_profile_df(player_id, df_name)
 
-    print(df.columns)
     df.drop('Unnamed: 0', axis=1, inplace=True)
     df.drop('PLAYER_ID', axis=1, inplace=True)
     df.drop('LEAGUE_ID', axis=1, inplace=True)
@@ -172,7 +168,7 @@ def get_player_awards(player_id):
     df.drop('FIRST_NAME', inplace=True, axis=1)
     df.drop('LAST_NAME', inplace=True, axis=1)
 
-    new_df = pd.DataFrame()
+    new_df = pd.DataFrame(index=[0])
     
     olympic_gold_medal = 0
     nba_champion = 0
@@ -182,7 +178,7 @@ def get_player_awards(player_id):
     all_nba = 0
 
 
-    for i in df['DESCRIPTION']:
+    for i in list(df['DESCRIPTION']):
         if i == 'Olympic Gold Medal':
             olympic_gold_medal += 1
         elif i == 'NBA Champion':
@@ -191,17 +187,19 @@ def get_player_awards(player_id):
             nba_allstar += 1
         elif i == 'All-NBA':
             all_nba += 1
-        elif i == 'MVP':
+        elif i == 'NBA Most Valuable Player':
             mvp += 1
-        elif i == 'FMVP':
+        elif i == 'NBA Finals Most Valuable Player':
             fmvp += 1
+
 
     new_df['Olympic Gold Medal'] = olympic_gold_medal
     new_df['NBA Champion'] = nba_champion
     new_df['NBA All-Star'] = nba_allstar
     new_df['All-NBA'] = all_nba
+    new_df['MVP'] = mvp
+    new_df['FMVP'] = fmvp
 
-    print(new_df.head)
 
     return df
     
