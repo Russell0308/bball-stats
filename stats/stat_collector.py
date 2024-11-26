@@ -130,14 +130,28 @@ def get_teams_df():
 
 
 # Search results data
-def create_search_csv():
-    if os.path.isfile('./stats/CSVs/search.csv') == True:
-        pass
-        
+def create_search_csv(df):
+    if os.path.exists('./stats/CSVs/search.csv'):
+        orig_df = pd.DataFrame('./stats/CSVs/search.csv')
 
-def get_search_df():
-    create_search_csv()
+        for x in df['full_name']: 
+            match = 0
+            for j in orig_df['full_name']:
+                if x = j:
+                    match += 1
+                    pass
+            if match > 0:
+                add_list = x
+
+        for i in add_list:
+            row = df.loc(i)
+            row_df = pd.DataFrame(row)
+            row_df.to_csv('./stats/CSVs/search.csv', mode='a')
+
+
+def get_search_csv(df):
     pass
+
 
 
 # Player awards
