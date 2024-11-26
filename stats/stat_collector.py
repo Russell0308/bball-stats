@@ -137,7 +137,7 @@ def create_search_csv(df):
         for x in df['full_name']: 
             match = 0
             for j in orig_df['full_name']:
-                if x = j:
+                if x == j:
                     match += 1
                     pass
             if match > 0:
