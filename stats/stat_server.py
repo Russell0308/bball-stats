@@ -64,7 +64,7 @@ def get_search_result_dash(user_query):
     result_df['Player_Number'] = player_number_list
     result_df['player_link'] = player_links_list
     result_df['Abbreviations'] = player_team_abbrev_list
-    result_df.drop('full_name', axis=2, inplace=True)
+    result_df.drop('full_name', axis=1, inplace=True)
     
 
     return result_df.iloc[:5]
