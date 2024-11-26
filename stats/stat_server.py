@@ -176,6 +176,10 @@ def get_player_awards(player_id):
     fmvp = 0
     nba_allstar = 0
     all_nba = 0
+    all_rookie_team = 0
+    rookie_of_the_month = 0
+    player_of_the_week = 0
+    player_of_the_month = 0
 
 
     for i in list(df['DESCRIPTION']):
@@ -191,17 +195,29 @@ def get_player_awards(player_id):
             mvp += 1
         elif i == 'NBA Finals Most Valuable Player':
             fmvp += 1
+        elif i == 'All-Rookie Team':
+            all_rookie_team += 1
+        elif i == 'NBA Rookie of the Month':
+            rookie_of_the_month += 1
+        elif i == 'NBA Player of the Week':
+            player_of_the_week += 1
+        elif i == 'NBA Player of the Month':
+            player_of_the_month += 1
 
 
     new_df['Olympic Gold Medal'] = olympic_gold_medal
     new_df['NBA Champion'] = nba_champion
-    new_df['NBA All-Star'] = nba_allstar
+    new_df['All-Star'] = nba_allstar
     new_df['All-NBA'] = all_nba
     new_df['MVP'] = mvp
-    new_df['FMVP'] = fmvp
+    new_df['Finals MVP'] = fmvp
+    new_df['All-Rookie Team'] = all_rookie_team
+    new_df['Rookie of the Month'] = rookie_of_the_month
+    new_df['Player of the Week'] = player_of_the_week
+    new_df['Player of the Month'] = player_of_the_month
 
 
-    return df
+    return new_df
     
 
 
