@@ -29,6 +29,8 @@ def get_search_result_dash(user_query):
         user_names_result.append(i[0])
     result_df['full_name'] = user_names_result
 
+    search = get_search_csv(result_df['full_name'])
+
     player_links_list = []
     player_team_abbrev_list = []
     player_number_list = []
