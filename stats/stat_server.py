@@ -29,10 +29,10 @@ def get_search_result_dash(user_query):
         user_names_result.append(i[0])
     result_df['full_name'] = user_names_result
     
-    try:
-        search = statc.get_search_csv(result_df['full_name'])
-    except Exception:
-        print(Exception)
+    search = statc.get_search_csv(result_df['full_name'])
+
+    if 1 == 1:
+        return search
 
     player_links_list = []
     player_team_abbrev_list = []
@@ -63,12 +63,13 @@ def get_search_result_dash(user_query):
         player_links_list.append(player_links)
 
     result_df.drop('link_names', axis=1, inplace=True)
-
-    statc.create_search_csv(df=result_df)
-
+    
     result_df['Player_Number'] = player_number_list
     result_df['player_link'] = player_links_list
     result_df['Abbreviations'] = player_team_abbrev_list
+
+    statc.create_search_csv(df=result_df)
+
     result_df.drop('full_name', axis=1, inplace=True)
     
 
