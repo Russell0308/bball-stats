@@ -157,10 +157,10 @@ def get_search_csv(names):
     for i in names:
         for j in df['full_name']:
             if j == i:
-                row = df[df['full_name'] == j]
-                row_keep.append(row)
+                row = df.loc[df['full_name'] == j]
+                row_keep.append(pd.DataFrame(row))
     for x in range(lis_len):
-        fin_df[x] = row_keep[x]
+        fin_df[x] = pd.concat([fin_df, row_keep[x].iloc[0]])
     print(fin_df.head)
     return fin_df
                 
