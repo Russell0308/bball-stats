@@ -29,10 +29,11 @@ def get_search_result_dash(user_query):
         user_names_result.append(i[0])
     result_df['full_name'] = user_names_result
     
-    search = statc.get_search_csv(result_df['full_name'])
+    response, df = statc.get_search_csv(result_df['full_name'])
 
-    if 1 == 1:
-        return search
+    if response == True:
+        df = df.drop(['Unnamed: 0', 'full_name'], axis=1)
+        return df
 
     player_links_list = []
     player_team_abbrev_list = []

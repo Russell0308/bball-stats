@@ -150,26 +150,24 @@ def create_search_csv(df):
 
 def get_search_csv(names):
     df = pd.read_csv('./stats/CSVs/search.csv')   
-    lis_len = 5
+    response = False
+    count = 0
 
     fin_df = pd.DataFrame()
     row_keep = []
     for i in names:
         for j in df['full_name']:
             if j == i:
+                count += 1
                 row = df.loc[df['full_name'] == j]
                 row_keep.append(pd.DataFrame(row))
-    for x in range(lis_len):
-        fin_df[x] = pd.concat([fin_df, row_keep[x].iloc[0]])
-    print(fin_df.head)
-    return fin_df
+    for x in range(len(row_keep)):
+        fin_df = pd.concat([fin_df, row_keep[x]])
+    if count == 9:
+        response = True
+    return response, fin_df
+
                 
-
-
-    
-
-
-
 # Player awards
 def create_player_awards_csv(player_id):
     df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()[0]
