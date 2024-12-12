@@ -33,7 +33,7 @@ def get_search_result_dash(user_query):
 
     if response == True:
         df = df.drop(['Unnamed: 0', 'full_name'], axis=1)
-        return df
+        return df.iloc[:7]
 
     player_links_list = []
     player_team_abbrev_list = []
