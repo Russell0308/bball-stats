@@ -10,10 +10,14 @@ import pandas as pd
 
 # Other
 import os
+import datetime
+
+year = str(datetime.date.today())[:4]
+season = str(int(year) - 1) + '-' + year[2:]
+
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-DB = SQLAlchemy(app)
+app.config['STATIC_FOLDER'] = os.path.join('assets')
 
 
 # Index view
@@ -28,9 +32,11 @@ def dash():
     user_query = str(request.form.get('playerName'))
     df = stat_server.get_search_result_dash(user_query)
 
-    mvp, fmvp, dpoty, cpoty, roty, coty = stat_server.get_awardwinners()
+    image = os.path.join(app.config['STATIC_FOLDER'], 'BostonCeltics.png')
 
-    return render_template('dash.html', mvp=mvp, fmvp=fmvp, dpoty=dpoty, cpoty=cpoty, roty=roty, coty=coty, tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
+    award_winner = stat_server.get_season_awardwinners(season)
+
+    return render_template('dash.html', champ_img=image, season=season, tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
 
 
 # Player Pages
@@ -48,11 +54,6 @@ def player_fullscreen(player_name):
     return render_template('player_fullscreen.html', player_name=player_name_clean, player_id=player_id, player_number=player_number, player_position=player_pos, player_height=height, player_weight=weight, team_name=team_name, tablePawards=[df_awards.to_html(classes='table', escape=False, index=False, header=True)], tablepgstats=[df.to_html(classes='table', escape=False, index=False, header=True)])
 
 
-# Images
-@app.route('/static/assets/<filename>')
-def images(player_id):
-    player_id = player_id
-    return send_from_directory('static/assets', filename)
 
 
 

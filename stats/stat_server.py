@@ -158,18 +158,6 @@ def get_player_height_weight(player_id):
     return player_row['HEIGHT'].iloc[0], player_row['WEIGHT'].iloc[0]
 
 
-def get_awardwinners():
-    mvp = 'Jokic'
-    fmvp = 'Brown'
-    dpoty = 'Gobert'
-    cpoty = 'Curry'
-    roty = 'Wembenyama'
-    coty = 'Daigneault'
-
-
-    return mvp, fmvp, dpoty, cpoty, roty, coty
-
-
 def get_player_awards(player_id):
     df = statc.get_player_awards_df(player_id)
 
@@ -229,6 +217,28 @@ def get_player_awards(player_id):
 
     return new_df
     
+
+def get_season_awardwinners(season):
+    id_df = pd.DataFrame(players_df['ids'])
+    count = 0
+
+    for i in range(len(id_df)):
+        player_id = id_df['ids'][i]
+    
+        path = (f'/stats/CSVs/playerprofiles/{player_id}/awards.csv')
+        try: 
+            df = pd.read_csv(path)
+            df = df[df['Season'] == season]
+            print(df.head)
+        except FileNotFoundError: 
+            count +=1 
+            print('Player Profile incomplete')
+    print(count)
+    print(len(list(id_df['ids'])))
+
+
+    return 'congrats'
+
 
 
 
