@@ -33,7 +33,7 @@ def get_search_result_dash(user_query):
 
     if response == True:
         df = df.drop(['Unnamed: 0', 'full_name'], axis=1)
-        return df.iloc[:7]
+        return df.iloc[0:]
 
     player_links_list = []
     player_team_abbrev_list = []
@@ -222,22 +222,21 @@ def get_season_awardwinners(season):
     id_df = pd.DataFrame(players_df['ids'])
     count = 0
 
+    df_awards_ = []
+
     for i in range(len(id_df)):
         player_id = id_df['ids'][i]
     
-        path = (f'/stats/CSVs/playerprofiles/{player_id}/awards.csv')
-        try: 
-            df = pd.read_csv(path)
-            df = df[df['Season'] == season]
-            print(df.head)
-        except FileNotFoundError: 
-            count +=1 
-            print('Player Profile incomplete')
-    print(count)
-    print(len(list(id_df['ids'])))
+        path = (f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+        df = pd.read_csv(path)
+
+        print(df.head)
+
+        #df = df[df['Season'] == season]
+
+        #
 
 
-    return 'congrats'
 
 
 
