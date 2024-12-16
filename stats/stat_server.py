@@ -234,11 +234,11 @@ def get_season_awardwinners(season):
 
         if df.empty == True:
             continue
+        
+        df_awards_.append(df)
 
-        #if row['DESCRIPTION'] == 'NBA Finals MVP':
-            #df_awards_.append(row[row['DESCRIPTION'] == 'NBA Finals MVP'])
 
-    print(df_awards_[0], 'THIS ONE HERE BOSS')
+    print(df_awards_, 'THIS ONE HERE BOSS')
 
 
 
