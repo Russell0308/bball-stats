@@ -230,11 +230,17 @@ def get_season_awardwinners(season):
         path = (f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
         df = pd.read_csv(path)
 
-        print(df.head)
+        df = df[df['SEASON'] == season]
 
-        #df = df[df['Season'] == season]
+        if df.empty == True:
+            continue
 
-        #
+        #if row['DESCRIPTION'] == 'NBA Finals MVP':
+            #df_awards_.append(row[row['DESCRIPTION'] == 'NBA Finals MVP'])
+
+    print(df_awards_[0], 'THIS ONE HERE BOSS')
+
+
 
 
 
