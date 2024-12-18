@@ -223,6 +223,9 @@ def get_season_awardwinners(season):
     count = 0
 
     df_awards_ = []
+    awards_target = ['NBA Finals Most Valuable Player', 'NBA Most Valuable Player', 'NBA Defensive Player of the Year']
+
+
 
     for i in range(len(id_df)):
         player_id = id_df['ids'][i]
@@ -231,14 +234,23 @@ def get_season_awardwinners(season):
         df = pd.read_csv(path)
 
         df = df[df['SEASON'] == season]
-
+        
         if df.empty == True:
             continue
+
+        print(df.head)
+
+        # STUCK #
+        for i in awards_target:
+            df = df[df['DESCRIPTION'] == i]
+            
+            if df.empty == False:
+                df_awards_.append(df)
+
         
-        df_awards_.append(df)
 
-
-    print(df_awards_, 'THIS ONE HERE BOSS')
+    for i in df_awards_:
+        print(i, 'THIS ONE HERE BOSS')
 
 
 
