@@ -223,7 +223,14 @@ def get_season_awardwinners(season):
     count = 0
 
     df_awards_ = []
-    awards_target = ['NBA Finals Most Valuable Player', 'NBA Most Valuable Player', 'NBA Defensive Player of the Year']
+    FMVP = 'NBA Finals Most Valuable Player'
+    MVP = 'NBA Most Valuable Player'
+    DPOY = 'NBA Defensive Player of the Year'
+    ROTY = 'NBA Rookie of the Year'
+    CPOTY = 'NBA Clutch Player of the Year'
+    COTY = 'NBA Coach of the Year'
+    MIP = 'NBA Most Improved Player'
+    SMOTY = 'NBA Sixth Man of the Year'
 
 
 
@@ -238,19 +245,54 @@ def get_season_awardwinners(season):
         if df.empty == True:
             continue
 
-        print(df.head)
-
-        # STUCK #
-        for i in awards_target:
-            df = df[df['DESCRIPTION'] == i]
-            
-            if df.empty == False:
-                df_awards_.append(df)
-
+        df_FMVP = df[df['DESCRIPTION'] == FMVP]
+        df_MVP = df[df['DESCRIPTION'] == MVP]
+        df_DPOY = df[df['DESCRIPTION'] == DPOY]
+        df_ROTY = df[df['DESCRIPTION'] == ROTY]
+        df_CPOTY = df[df['DESCRIPTION'] == CPOTY]
+        #df_COTY = df[df['DESCRIPTION'] == COTY]
+        df_MIP = df[df['DESCRIPTION'] == MIP]
+        df_SMOTY = df[df['DESCRIPTION'] == SMOTY]
         
+        if df_FMVP.empty == False:
+            df_awards_.append(df_FMVP)
 
+        if df_MVP.empty == False:
+            df_awards_.append(df_MVP)
+
+        if df_DPOY.empty == False:
+            df_awards_.append(df_DPOY)
+
+        if df_ROTY.empty == False:
+            df_awards_.append(df_ROTY)
+
+        if df_CPOTY.empty == False:
+            df_awards_.append(df_CPOTY)
+
+        #if df_COTY.empty == False:
+            #df_awards_.append(df_COTY)
+
+        if df_MIP.empty == False:
+            df_awards_.append(df_MIP)
+
+        if df_SMOTY.empty == False:
+            df_awards_.append(df_SMOTY)
+    
+    display_awards = []
     for i in df_awards_:
-        print(i, 'THIS ONE HERE BOSS')
+        fname = i['FIRST_NAME'].iloc[0]
+        lname = i['LAST_NAME'].iloc[0]
+        award = i['DESCRIPTION'].iloc[0]
+
+        winner = award + ': ' + fname + ' ' +  lname
+        
+        display_awards.append(winner)
+
+
+
+
+    return display_awards
+
 
 
 

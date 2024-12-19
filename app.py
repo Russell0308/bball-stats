@@ -34,9 +34,9 @@ def dash():
 
     image = os.path.join(app.config['STATIC_FOLDER'], 'BostonCeltics.png')
 
-    award_winner = stat_server.get_season_awardwinners(season)
+    award_winners = stat_server.get_season_awardwinners(season)
 
-    return render_template('dash.html', champ_img=image, season=season, tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
+    return render_template('dash.html', champ_img=image, season=season, award_winners=award_winners, tables=[df.to_html(classes='table', render_links=True, index_names=False, escape=False, index=False, header=False)])
 
 
 # Player Pages

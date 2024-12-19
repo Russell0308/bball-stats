@@ -12,6 +12,10 @@
 	<p>Boston Celtics</p>
 
 		<h4>Award Winners</h4>
+		{% for winner in award_winners %}
+		<p>{{ winner|safe }}</p>
+		{% endfor %}
+
 
 	</div>
 
