@@ -66,10 +66,14 @@ def get_players_team_id(player_id):
 
 # Player Profile data
 def create_player_profile_csv(player_id):
+    global data_names_list
     data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regular Season', 'Career Totals Post Season by Year', 'Career Totals Post Season', 'Career Totals All-Star Games by Year', 'Career Totals All-Star Games', 'Career Totals College by Year', 'Career Totals College', 'Career Totals Preseason by Year', 'Career Totals Preseason', 'Career Rankings by Year', 'Career Playoff Ranking by Year', 'Season Highs', 'Career Highs', 'Next Game']
+    try:
+        player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
 
-    player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-
+    except:
+        print(Exception)
+    
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
         if os.path.isdir(f'./stats/CSVs/playerprofiles/{player_id}') == True:
@@ -169,9 +173,12 @@ def get_search_csv(names):
                 
 # Player awards
 def create_player_awards_csv(player_id):
-    df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()[0]
+    try:
+        df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()[0]
+        df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+    except:
+        print(Exception)
 
-    df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
 
 
 def get_player_awards_df(player_id):
