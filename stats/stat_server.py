@@ -284,7 +284,13 @@ def get_season_awardwinners(season):
         lname = i['LAST_NAME'].iloc[0]
         award = i['DESCRIPTION'].iloc[0]
 
-        winner = award + ': ' + fname + ' ' +  lname
+        full_name = fname + ' ' + lname
+
+        link_name = re.sub(r'\s+', '_', full_name)
+
+        link = f'''<a href=" { url_for('player_fullscreen', player_name=link_name) } ">{full_name}</a>'''
+
+        winner = award + ': ' + link
         
         display_awards.append(winner)
 
