@@ -1,9 +1,9 @@
 # Flask
-from flask import Flask, render_template, request, url_for
+from flask import Blueprint, Flask, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 # Stat server
-from stats import stat_server
+from app.stats import stat_server
 
 # DS Library(s)
 import pandas as pd
@@ -16,23 +16,22 @@ year = str(datetime.date.today())[:4]
 season = str(int(year) - 1) + '-' + year[2:]
 
 
-app = Flask(__name__)
-app.config['STATIC_FOLDER'] = os.path.join('assets')
+main = Blueprint('main', __name__, './main/static/assets')
 
 
 # Index view
-@app.route('/')
+@main.route('/')
 def root():
     return render_template('index.html')
 
 
 # Dashboard view (main user view)
-@app.route('/dash', methods=['GET', 'POST'])
+@main.route('/dash', methods=['GET', 'POST'])
 def dash():
     user_query = str(request.form.get('playerName'))
     df = stat_server.get_search_result_dash(user_query)
 
-    image = os.path.join(app.config['STATIC_FOLDER'], 'BostonCeltics.png')
+    image = os.path.join(main.config['STATIC_FOLDER'], 'BostonCeltics.png')
 
     award_winners = stat_server.get_season_awardwinners(season)
 
@@ -40,7 +39,7 @@ def dash():
 
 
 # Player Pages
-@app.route('/players/<player_name>')
+@main.route('/players/<player_name>')
 def player_fullscreen(player_name):
     player_name_clean = player_name.replace('_', ' ')
     player_id = stat_server.get_id_from_name(player_name_clean)

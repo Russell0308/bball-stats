@@ -2,7 +2,7 @@ import sqlite3
 
 from flask import url_for
 
-from stats import stat_collector as statc
+from app.stats import stat_collector as statc
 
 from thefuzz import process
 

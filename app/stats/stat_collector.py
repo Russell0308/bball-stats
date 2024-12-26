@@ -14,12 +14,12 @@ import os
 
 def create_basic_player_data_csv():
     # Does file exist?
-    if os.path.isfile('./stats/CSVs/basic_player_data.csv') == True:
+    if os.path.isfile('./app/stats/CSVs/basic_player_data.csv') == True:
         pass
     else:                     # Create file
         basic_player_df = pd.DataFrame(players.get_active_players())   
         basic_player_df.columns = ['ids', 'last_name', 'first_name', 'full_name', 'is_active']
-        basic_player_df.to_csv('./stats/CSVs/basic_player_data.csv', index=False)
+        basic_player_df.to_csv('./app/stats/CSVs/basic_player_data.csv', index=False)
 
 
 def get_basic_player_df():
@@ -28,7 +28,7 @@ def get_basic_player_df():
     '''
     create_basic_player_data_csv()
     update_basic_player_df()
-    df = pd.read_csv('./stats/CSVs/basic_player_data.csv')
+    df = pd.read_csv('./app/stats/CSVs/basic_player_data.csv')
     
     return df
 
@@ -49,7 +49,7 @@ def get_player_number(player_id):
 
 
 def update_basic_player_df():
-    location = './stats/CSVs/basic_player_data.csv'
+    location = './app/stats/CSVs/basic_player_data.csv'
     
     basic_player_df = pd.DataFrame(players.get_active_players())
     basic_player_df.columns = ['ids', 'full_name', 'first_name', 'last_name', 'is_active']
@@ -76,13 +76,13 @@ def create_player_profile_csv(player_id):
     
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
-        if os.path.isdir(f'./stats/CSVs/playerprofiles/{player_id}') == True:
+        if os.path.isdir(f'./app/stats/CSVs/playerprofiles/{player_id}') == True:
             pass
         else:
-            os.mkdir(f'./stats/CSVs/playerprofiles/{player_id}')
+            os.mkdir(f'./app/stats/CSVs/playerprofiles/{player_id}')
 
 
-        df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/{x}.csv')
+        df.to_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/{x}.csv')
 
 
 def get_player_profile_df(player_id, df_name):
@@ -92,7 +92,7 @@ def get_player_profile_df(player_id, df_name):
     except Exception: 
         print(Exception)
 
-    df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}/{df_name}.csv')
+    df = pd.read_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/{df_name}.csv')
 
 
     return df
@@ -100,42 +100,42 @@ def get_player_profile_df(player_id, df_name):
 
 # Team Roster
 def create_team_roster_csv(team_id):
-    if os.path.isfile(f'./stats/CSVs/teamrosters/{team_id}.csv') == True:
+    if os.path.isfile(f'./app/stats/CSVs/teamrosters/{team_id}.csv') == True:
         pass
     else:
         team_roster_df = pd.DataFrame(commonteamroster.CommonTeamRoster(team_id).get_data_frames()[0])
-        team_roster_df.to_csv(f'./stats/CSVs/teamrosters/{team_id}.csv', index=False)
+        team_roster_df.to_csv(f'./app/stats/CSVs/teamrosters/{team_id}.csv', index=False)
 
 
 def get_teamroster_df(team_id):
     create_team_roster_csv(team_id)
 
-    df = pd.read_csv(f'./stats/CSVs/teamrosters/{team_id}.csv')
+    df = pd.read_csv(f'./app/stats/CSVs/teamrosters/{team_id}.csv')
 
     return df
 
 
 # Basic Team data
 def create_teams_data_csv():
-    if os.path.isfile('./stats/CSVs/teams_data.csv') == True:
+    if os.path.isfile('./app/stats/CSVs/teams_data.csv') == True:
         pass
     else:
         teams_df = pd.DataFrame(teams.get_teams())
-        teams_df.to_csv('./stats/CSVs/teams_data.csv')
+        teams_df.to_csv('./app/stats/CSVs/teams_data.csv')
 
 
 def get_teams_df():
     create_teams_data_csv()
 
-    teams_df = pd.read_csv('./stats/CSVs/teams_data.csv')
+    teams_df = pd.read_csv('./app/stats/CSVs/teams_data.csv')
 
     return teams_df
 
 
 # Search results data
 def create_search_csv(df):
-    if os.path.exists('./stats/CSVs/search.csv'):
-        orig_df = pd.read_csv('./stats/CSVs/search.csv')
+    if os.path.exists('./app/stats/CSVs/search.csv'):
+        orig_df = pd.read_csv('./app/stats/CSVs/search.csv')
         add_list = []
         for x in df['full_name']: 
             match = 0
@@ -148,16 +148,19 @@ def create_search_csv(df):
         for i in add_list:
             row = df[df['full_name'] == i]
             row_df = pd.DataFrame(row)
-            row_df.to_csv('./stats/CSVs/search.csv', mode='a')
-
+            row_df.to_csv('./app/stats/CSVs/search.csv', mode='a')
+    else:
+        os.mknod('./app/stats/CSVs/search.csv')
 
 def get_search_csv(names):
-    df = pd.read_csv('./stats/CSVs/search.csv')   
+    df = pd.read_csv('./app/stats/CSVs/search.csv')   
     response = False
     count = 0
 
     fin_df = pd.DataFrame()
     row_keep = []
+    if df.empty == True:
+        continue
     for i in names:
         for j in df['full_name']:
             if j == i:
@@ -175,7 +178,7 @@ def get_search_csv(names):
 def create_player_awards_csv(player_id):
     try:
         df = playerawards.PlayerAwards(player_id=player_id).get_data_frames()[0]
-        df.to_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+        df.to_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/awards.csv')
     except:
         print(Exception)
 
@@ -184,7 +187,7 @@ def create_player_awards_csv(player_id):
 def get_player_awards_df(player_id):
     create_player_awards_csv(player_id)
     
-    df = pd.read_csv(f'./stats/CSVs/playerprofiles/{player_id}/awards.csv')
+    df = pd.read_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/awards.csv')
 
     return df
 
