@@ -1,0 +1,6 @@
+Archive
+test.py
+__pycache__/
+notebooks/.ipynb_checkpoints/
+stats/__pycache__/
+removable.py
