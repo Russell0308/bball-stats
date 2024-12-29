@@ -135,16 +135,28 @@ def get_teams_df():
 # Search results data
 def create_search_csv(df):
     if os.path.exists('./app/stats/CSVs/search.csv'):
-        orig_df = pd.read_csv('./app/stats/CSVs/search.csv')
+        try: 
+            search_df = pd.read_csv('./app/stats/CSVs/search.csv')
+        except Exception as e:
+            print(e)
+            pass
         add_list = []
         for x in df['full_name']: 
-            match = 0
-            for j in orig_df['full_name']:
-                if x == j:
-                    match += 1
-                    pass
-            if match == 0:
+            matchlis = []
+            try:
+                for j in search_df['full_name']:
+                    if x == j:
+                        matchlis.append(True)
+                    else:
+                        matchlis.append(False)
+            except:
                 add_list.append(x)
+        match_count = 0
+        for i in matchlis:
+            if i == True:
+                match_count += 1
+        if match_count == 0:
+            add_list.append(x)
         for i in add_list:
             row = df[df['full_name'] == i]
             row_df = pd.DataFrame(row)
@@ -160,7 +172,7 @@ def get_search_csv(names):
     fin_df = pd.DataFrame()
     row_keep = []
     if df.empty == True:
-        continue
+        return response, fin_df
     for i in names:
         for j in df['full_name']:
             if j == i:
