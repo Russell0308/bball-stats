@@ -67,7 +67,21 @@ def get_players_team_id(player_id):
 # Player Profile data
 def create_player_profile_csv(player_id):
     global data_names_list
-    data_names_list = ['Career Totals Regular Season by Year', 'Career Totals Regular Season', 'Career Totals Post Season by Year', 'Career Totals Post Season', 'Career Totals All-Star Games by Year', 'Career Totals All-Star Games', 'Career Totals College by Year', 'Career Totals College', 'Career Totals Preseason by Year', 'Career Totals Preseason', 'Career Rankings by Year', 'Career Playoff Ranking by Year', 'Season Highs', 'Career Highs', 'Next Game']
+    data_names_list = ['Career Totals Regular Season by Year',
+                       'Career Totals Regular Season',
+                       'Career Totals Post Season by Year',
+                       'Career Totals Post Season',
+                       'Career Totals All-Star Games by Year',
+                       'Career Totals All-Star Games',
+                       'Career Totals College by Year',
+                       'Career Totals College',
+                       'Career Totals Preseason by Year',
+                       'Career Totals Preseason',
+                       'Career Rankings by Year',
+                       'Career Playoff Ranking by Year',
+                       'Season Highs',
+                       'Career Highs',
+                       'Next Game']
     try:
         player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
 
