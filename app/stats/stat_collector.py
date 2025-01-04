@@ -33,6 +33,13 @@ def get_basic_player_df():
     return df
 
 
+def get_player_ids():
+    '''
+    '''
+    df = get_basic_player_df()
+    return list(df['ids'])
+
+
 def get_player_number(player_id):
     team_id = get_players_team_id(player_id)
     
@@ -85,15 +92,15 @@ def create_player_profile_csv(player_id):
     try:
         player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
 
-    except:
-        print(Exception)
+    except Exception as e:
+        print(e)
     
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
         if os.path.isdir(f'./app/stats/CSVs/playerprofiles/{player_id}') == True:
             pass
         else:
-            os.mkdir(f'./app/stats/CSVs/playerprofiles/{player_id}')
+            os.makedirs(f'./app/stats/CSVs/playerprofiles/{player_id}')
 
 
         df.to_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/{x}.csv')
