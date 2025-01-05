@@ -63,7 +63,7 @@ def get_search_result_dash(user_query):
         player_number_list.append(player_number)
 
     for x, y in zip(result_df['full_name'], result_df['link_names']):
-        player_links = f'''<a href=" { url_for('player_fullscreen', player_name=y) } ">{x}</a>'''
+        player_links = f'''<a href=" { url_for('main.player_fullscreen', player_name=y) } ">{x}</a>'''
         player_links_list.append(player_links)
 
     result_df.drop('link_names', axis=1, inplace=True)

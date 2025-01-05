@@ -124,7 +124,6 @@ def create_team_roster_csv(team_id):
     if os.path.isfile(f'./app/stats/CSVs/teamrosters/{team_id}.csv') == True:
         pass
     else:
-        os.makedirs('./app/stats/CSVs/teamrosters')
         team_roster_df = pd.DataFrame(commonteamroster.CommonTeamRoster(team_id).get_data_frames()[0])
         team_roster_df.to_csv(f'./app/stats/CSVs/teamrosters/{team_id}.csv', index=False)
 
