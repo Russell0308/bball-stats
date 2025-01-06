@@ -1,0 +1,18 @@
+TeamID,SEASON,LeagueID,PLAYER,NICKNAME,PLAYER_SLUG,NUM,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,AGE,EXP,SCHOOL,PLAYER_ID,HOW_ACQUIRED
+1610612740,2024,00,Zion Williamson,Zion,zion-williamson,1,F,6-6,284,"JUL 06, 2000",24.0,4,Duke,1629627,#1 Pick in 2019 Draft
+1610612740,2024,00,Herbert Jones,Herbert,herbert-jones,2,F,6-7,206,"OCT 06, 1998",26.0,3,Alabama,1630529,#35 Pick in 2021 Draft
+1610612740,2024,00,CJ McCollum,CJ,cj-mccollum,3,G,6-3,190,"SEP 19, 1991",33.0,11,Lehigh,203468,Traded from POR on 02/08/22
+1610612740,2024,00,Javonte Green,Javonte,javonte-green,4,G,6-5,205,"JUL 23, 1993",31.0,5,Radford,1629750,Signed on 08/22/24
+1610612740,2024,00,Dejounte Murray,Dejounte,dejounte-murray,5,G,6-4,180,"SEP 19, 1996",28.0,7,Washington,1627749,Traded from ATL on 07/06/24
+1610612740,2024,00,Jamal Cain,Jamal,jamal-cain,8,F,6-6,191,"MAR 20, 1999",25.0,2,Oakland,1631288,Signed on 07/12/24
+1610612740,2024,00,Daniel Theis,Daniel,daniel-theis,10,F-C,6-8,245,"APR 04, 1992",32.0,7,Brose Bamberg,1628464,Signed on 07/09/24
+1610612740,2024,00,Brandon Boston,Brandon,brandon-boston,11,G,6-6,188,"NOV 28, 2001",23.0,3,Kentucky,1630527,Awarded on Waivers on 10/21/24
+1610612740,2024,00,Antonio Reeves,Antonio,antonio-reeves,12,G,6-5,205,"NOV 20, 2002",22.0,R,Kentucky,1641810,Draft Rights Traded from ORL on 06/27/24
+1610612740,2024,00,Brandon Ingram,Brandon,brandon-ingram,14,F,6-8,190,"SEP 02, 1997",27.0,8,Duke,1627742,Traded from LAL on 07/06/19
+1610612740,2024,00,Jose Alvarado,Jose,jose-alvarado,15,G,6-0,179,"APR 12, 1998",26.0,3,Georgia Tech,1630631,Signed on 08/18/21
+1610612740,2024,00,Karlo Matković,Karlo,karlo-matković,17,F-C,6-10,231,"MAR 30, 2001",23.0,R,Mega Basket,1631255,#52 Pick in 2022 Draft
+1610612740,2024,00,Yves Missi,Yves,yves-missi,21,C,6-11,235,"MAY 14, 2004",20.0,R,Baylor,1642274,#21 Pick in 2024 Draft
+1610612740,2024,00,Jordan Hawkins,Jordan,jordan-hawkins,24,G,6-5,190,"APR 29, 2002",22.0,1,Connecticut,1641722,#14 Pick in 2023 Draft
+1610612740,2024,00,Trey Murphy III,Trey,trey-murphy-iii,25,F,6-8,206,"JUN 18, 2000",24.0,3,Virginia,1630530,Draft Rights Traded from MEM on 08/07/21
+1610612740,2024,00,Jeremiah Robinson-Earl,Jeremiah,jeremiah-robinson-earl,50,F,6-8,240,"NOV 03, 2000",24.0,3,Villanova,1630526,Signed on 11/03/23
+1610612740,2024,00,Trey Jemison III,Trey,trey-jemison-iii,55,C,6-10,260,"NOV 28, 1999",25.0,1,Alabama-Birmingham,1641998,
