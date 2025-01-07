@@ -3,8 +3,6 @@ import sqlite3
 from nba_api.stats.endpoints import playerprofilev2, commonteamroster, playerawards
 from nba_api.stats.static import teams, players
 
-#from stats import stat_server
-
 import pandas as pd
 
 import os
@@ -91,6 +89,7 @@ def create_player_profile_csv(player_id):
                        'Next Game']
     try:
         player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
+        print(player_profile_list)
 
     except Exception as e:
         print(e)
