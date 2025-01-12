@@ -1,0 +1,4 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1626156,D'Angelo,Russell,Los Angeles Lakers,All-Rookie Team,2,2015-16,,,West,Award,Kia Motors,KIART,
+1,1626156,D'Angelo,Russell,Brooklyn Nets,NBA Player of the Week,,2018-19,,2019-01-14T00:00:00,East,Award,Kia Motors,KIPWK,
+2,1626156,D'Angelo,Russell,,NBA All-Star,,2018-19,,,,Award,All-Star,,

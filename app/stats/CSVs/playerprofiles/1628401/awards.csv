@@ -1,0 +1,7 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1628401,Derrick,White,Boston Celtics,NBA Player of the Week,,2022-23,,2023-02-06T00:00:00,East,Award,Kia Motors,KIPWK,
+1,1628401,Derrick,White,Boston Celtics,All-Defensive Team,2,2022-23,,,East,Award,Kia Motors,KIADT,
+2,1628401,Derrick,White,Boston Celtics,NBA Player of the Week,,2023-24,,2024-03-18T00:00:00,East,Award,Kia Motors,KIPWK,
+3,1628401,Derrick,White,Boston Celtics,All-Defensive Team,2,2023-24,,,East,Award,Kia Motors,KIADT,
+4,1628401,Derrick,White,Boston Celtics,NBA Champion,,2023-24,,,,Award,Champion,,
+5,1628401,Derrick,White,USA,Olympic Gold Medal,,2024,,,,Award,Olympic,Gold,

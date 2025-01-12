@@ -1,0 +1,13 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1629630,Ja,Morant,Memphis Grizzlies,All-Rookie Team,1,2019-20,,,West,Award,Kia Motors,KIART,
+1,1629630,Ja,Morant,Memphis Grizzlies,NBA Rookie of the Month,,2019-20,1/1/2020,,West,Award,Kia Motors,KIRMO,
+2,1629630,Ja,Morant,Memphis Grizzlies,NBA Rookie of the Month,,2019-20,11/1/2019,1900-01-01T12:00:00,West,Award,Kia Motors,KIRMO,
+3,1629630,Ja,Morant,Memphis Grizzlies,NBA Rookie of the Month,,2019-20,12/1/2019,1900-01-01T12:00:00,West,Award,Kia Motors,KIRMO,
+4,1629630,Ja,Morant,Memphis Grizzlies,NBA Rookie of the Year,,2019-20,,,West,Award,Kia Motors,KIROY,
+5,1629630,Ja,Morant,Memphis Grizzlies,NBA Player of the Week,,2021-22,,2021-12-27T00:00:00,West,Award,Kia Motors,KIPWK,
+6,1629630,Ja,Morant,Memphis Grizzlies,NBA Player of the Week,,2021-22,,2022-01-03T00:00:00,West,Award,Kia Motors,KIPWK,
+7,1629630,Ja,Morant,Memphis Grizzlies,NBA Most Improved Player,,2021-22,,,West,Award,Kia Motors,KIMIP,
+8,1629630,Ja,Morant,Memphis Grizzlies,All-NBA,2,2021-22,,,West,Award,Kia Motors,KIANT,
+9,1629630,Ja,Morant,Memphis Grizzlies,NBA Player of the Week,,2023-24,,2023-12-18T00:00:00,West,Award,Kia Motors,KIPWK,
+10,1629630,Ja,Morant,,NBA All-Star,,2021-22,,,,Award,All-Star,,
+11,1629630,Ja,Morant,,NBA All-Star,,2022-23,,,,Award,All-Star,,

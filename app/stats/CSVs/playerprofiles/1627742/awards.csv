@@ -1,0 +1,8 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1627742,Brandon,Ingram,New Orleans Pelicans,NBA Most Improved Player,,2019-20,,,West,Award,Kia Motors,KIMIP,
+1,1627742,Brandon,Ingram,New Orleans Pelicans,NBA Player of the Week,,2019-20,,2019-12-23T00:00:00,West,Award,Kia Motors,KIPWK,
+2,1627742,Brandon,Ingram,New Orleans Pelicans,NBA Player of the Week,,2020-21,,2020-12-22T00:00:00,West,Award,Kia Motors,KIPWK,
+3,1627742,Brandon,Ingram,Los Angeles Lakers,All-Rookie Team,2,2016-17,,,West,Award,Kia Motors,KIART,
+4,1627742,Brandon,Ingram,New Orleans Pelicans,NBA Player of the Week,,2021-22,,2022-01-31T00:00:00,West,Award,Kia Motors,KIPWK,
+5,1627742,Brandon,Ingram,New Orleans Pelicans,NBA Player of the Week,,2022-23,,2023-03-20T00:00:00,West,Award,Kia Motors,KIPWK,
+6,1627742,Brandon,Ingram,,NBA All-Star,,2019-20,,,,Award,All-Star,,

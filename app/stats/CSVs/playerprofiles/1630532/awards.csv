@@ -1,0 +1,4 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1630532,Franz,Wagner,Orlando Magic,NBA Rookie of the Month,,2021-22,12/1/2021,,East,Award,Kia Motors,KIRMO,
+1,1630532,Franz,Wagner,Orlando Magic,All-Rookie Team,1,2021-22,,,East,Award,Kia Motors,KIART,
+2,1630532,Franz,Wagner,Orlando Magic,NBA Player of the Week,,2024-25,,2024-11-11T00:00:00,East,Award,Kia Motors,KIPWK,

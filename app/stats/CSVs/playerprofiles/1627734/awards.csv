@@ -1,0 +1,11 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1627734,Domantas,Sabonis,Indiana Pacers,NBA Player of the Week,,2020-21,,2020-12-22T00:00:00,East,Award,Kia Motors,KIPWK,
+1,1627734,Domantas,Sabonis,Indiana Pacers,NBA Player of the Week,,2021-22,,2021-12-06T00:00:00,East,Award,Kia Motors,KIPWK,
+2,1627734,Domantas,Sabonis,Sacramento Kings,NBA Player of the Week,,2022-23,,2023-03-13T00:00:00,West,Award,Kia Motors,KIPWK,
+3,1627734,Domantas,Sabonis,Sacramento Kings,NBA Player of the Week,,2022-23,,2023-03-06T00:00:00,West,Award,Kia Motors,KIPWK,
+4,1627734,Domantas,Sabonis,Sacramento Kings,NBA Player of the Week,,2022-23,,2023-01-09T00:00:00,West,Award,Kia Motors,KIPWK,
+5,1627734,Domantas,Sabonis,Sacramento Kings,All-NBA,3,2022-23,,,West,Award,Kia Motors,KIANT,
+6,1627734,Domantas,Sabonis,Sacramento Kings,All-NBA,3,2023-24,,,West,Award,Kia Motors,KIANT,
+7,1627734,Domantas,Sabonis,,NBA All-Star,,2022-23,,,,Award,All-Star,,
+8,1627734,Domantas,Sabonis,,NBA All-Star,,2019-20,,,,Award,All-Star,,
+9,1627734,Domantas,Sabonis,,NBA All-Star,,2020-21,,,,Award,All-Star,,

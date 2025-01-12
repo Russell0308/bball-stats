@@ -33,6 +33,8 @@ def dash():
 
     award_winners = stat_server.get_season_awardwinners(season)
 
+    image = 'https://cdn.nba.com/logos/nba/1610612738/primary/L/logo.svg' ### API for celtics logo image
+
     return render_template('dash.html',
                            champ_img=image,
                            season=season,

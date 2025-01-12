@@ -1,0 +1,4 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1628398,Kyle,Kuzma,Los Angeles Lakers,All-Rookie Team,1,2017-18,,,West,Award,Kia Motors,KIART,
+1,1628398,Kyle,Kuzma,Los Angeles Lakers,NBA Rookie of the Month,,2017-18,11/1/2017,1900-01-01T12:00:00,West,Award,Kia Motors,KIRMO,
+2,1628398,Kyle,Kuzma,Los Angeles Lakers,NBA Champion,,2019-20,,,,Award,Champion,,
