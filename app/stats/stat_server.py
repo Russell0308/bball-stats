@@ -291,7 +291,7 @@ def get_season_awardwinners(season):
 
         link_name = re.sub(r'\s+', '_', full_name)
 
-        link = f'''<a href=" { url_for('player_fullscreen', player_name=link_name) } ">{full_name}</a>'''
+        link = f'''<a href=" { url_for('main.player_fullscreen', player_name=link_name) } ">{full_name}</a>'''
 
         winner = award + ': ' + link
         
