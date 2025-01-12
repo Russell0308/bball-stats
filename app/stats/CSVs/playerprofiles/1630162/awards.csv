@@ -1,0 +1,10 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1630162,Anthony,Edwards,Minnesota Timberwolves,NBA Rookie of the Month,,2020-21,3/1/2021,,West,Award,Kia Motors,KIRMO,
+1,1630162,Anthony,Edwards,Minnesota Timberwolves,NBA Rookie of the Month,,2020-21,4/1/2021,,West,Award,Kia Motors,KIRMO,
+2,1630162,Anthony,Edwards,Minnesota Timberwolves,NBA Rookie of the Month,,2020-21,5/1/2021,,West,Award,Kia Motors,KIRMO,
+3,1630162,Anthony,Edwards,Minnesota Timberwolves,All-Rookie Team,1,2020-21,,,West,Award,Kia Motors,KIART,
+4,1630162,Anthony,Edwards,Minnesota Timberwolves,NBA Player of the Week,,2023-24,,2023-11-06T00:00:00,West,Award,Kia Motors,KIPWK,
+5,1630162,Anthony,Edwards,Minnesota Timberwolves,All-NBA,2,2023-24,,,West,Award,Kia Motors,KIANT,
+6,1630162,Anthony,Edwards,,NBA All-Star,,2022-23,,,,Award,All-Star,,
+7,1630162,Anthony,Edwards,,NBA All-Star,,2023-24,,,,Award,All-Star,,
+8,1630162,Anthony,Edwards,USA,Olympic Gold Medal,,2024,,,,Award,Olympic,Gold,

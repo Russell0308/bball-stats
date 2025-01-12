@@ -1,0 +1,12 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1627759,Jaylen,Brown,Boston Celtics,NBA Player of the Week,,2019-20,,2019-12-23T00:00:00,East,Award,Kia Motors,KIPWK,
+1,1627759,Jaylen,Brown,Boston Celtics,NBA Player of the Week,,2019-20,,2020-01-27T00:00:00,East,Award,Kia Motors,KIPWK,
+2,1627759,Jaylen,Brown,Boston Celtics,All-Rookie Team,2,2016-17,,,East,Award,Kia Motors,KIART,
+3,1627759,Jaylen,Brown,Boston Celtics,NBA Player of the Week,,2022-23,,2023-03-20T00:00:00,East,Award,Kia Motors,KIPWK,
+4,1627759,Jaylen,Brown,Boston Celtics,All-NBA,2,2022-23,,,East,Award,Kia Motors,KIANT,
+5,1627759,Jaylen,Brown,Boston Celtics,NBA Player of the Week,,2023-24,,2024-02-26T00:00:00,East,Award,Kia Motors,KIPWK,
+6,1627759,Jaylen,Brown,,NBA All-Star,,2023-24,,,,Award,All-Star,,
+7,1627759,Jaylen,Brown,,NBA All-Star,,2020-21,,,,Award,All-Star,,
+8,1627759,Jaylen,Brown,,NBA All-Star,,2022-23,,,,Award,All-Star,,
+9,1627759,Jaylen,Brown,Boston Celtics,NBA Finals Most Valuable Player,,2023-24,,,,Award,Kia Motors,KFMVP,
+10,1627759,Jaylen,Brown,Boston Celtics,NBA Champion,,2023-24,,,,Award,Champion,,

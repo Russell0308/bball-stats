@@ -1,0 +1,4 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1631096,Chet,Holmgren,Oklahoma City Thunder,NBA Rookie of the Month,,2023-24,11/1/2023,,West,Award,Kia Motors,KIRMO,
+1,1631096,Chet,Holmgren,Oklahoma City Thunder,NBA Rookie of the Month,,2023-24,12/1/2023,,West,Award,Kia Motors,KIRMO,
+2,1631096,Chet,Holmgren,Oklahoma City Thunder,All-Rookie Team,1,2023-24,,,West,Award,Kia Motors,KIART,

@@ -1,0 +1,5 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,202711,Bojan,Bogdanovic,Brooklyn Nets,All-Rookie Team,2,2014-15,,,1610612751,Award,Kia Motors,KIART,
+1,202711,Bojan,Bogdanovic,Indiana Pacers,NBA Player of the Week,,2018-19,,2019-02-04T00:00:00,East,Award,Kia Motors,KIPWK,
+2,202711,Bojan,Bogdanovic,Utah Jazz,NBA Player of the Week,,2020-21,,2021-05-03T00:00:00,West,Award,Kia Motors,KIPWK,
+3,202711,Bojan,Bogdanovic,Brooklyn Nets,NBA Rookie of the Month,,2014-15,4/1/2015,,East,Award,Kia Motors,KIRMO,

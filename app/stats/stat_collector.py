@@ -89,11 +89,9 @@ def create_player_profile_csv(player_id):
                        'Next Game']
     try:
         player_profile_list = playerprofilev2.PlayerProfileV2(player_id=player_id).get_data_frames()
-        print(player_profile_list)
 
     except Exception as e:
         print(e)
-    
     for x, i in zip(data_names_list, player_profile_list):
         df = pd.DataFrame(i)
         if os.path.isdir(f'./app/stats/CSVs/playerprofiles/{player_id}') == True:

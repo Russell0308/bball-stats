@@ -1,5 +1,5 @@
 # Flask
-from flask import Blueprint, Flask, render_template, request, url_for
+from flask import Blueprint, current_app, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 # Stat server
@@ -30,8 +30,6 @@ def root():
 def dash():
     user_query = str(request.form.get('playerName'))
     df = stat_server.get_search_result_dash(user_query)
-
-    image = os.path.join(main.config['STATIC_FOLDER'], 'BostonCeltics.png')
 
     award_winners = stat_server.get_season_awardwinners(season)
 

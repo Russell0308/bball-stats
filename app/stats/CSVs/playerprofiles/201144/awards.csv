@@ -1,0 +1,5 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,201144,Mike,Conley,Memphis Grizzlies,All-Defensive Team,2,2012-13,,,1610612763,Award,Kia Motors,KIADT,
+1,201144,Mike,Conley,Memphis Grizzlies,NBA Player of the Week,,2018-19,,2019-03-04T00:00:00,West,Award,Kia Motors,KIPWK,
+2,201144,Mike,Conley,Memphis Grizzlies,NBA Sportsmanship,,2013-14,,,,Award,Kia Motors,KSPRT,
+3,201144,Mike,Conley,,NBA All-Star,,2020-21,,,,Award,All-Star,,

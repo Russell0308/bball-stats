@@ -1,0 +1,11 @@
+,PERSON_ID,FIRST_NAME,LAST_NAME,TEAM,DESCRIPTION,ALL_NBA_TEAM_NUMBER,SEASON,MONTH,WEEK,CONFERENCE,TYPE,SUBTYPE1,SUBTYPE2,SUBTYPE3
+0,1630169,Tyrese,Haliburton,Sacramento Kings,NBA Rookie of the Month,,2020-21,1/1/2021,,West,Award,Kia Motors,KIRMO,
+1,1630169,Tyrese,Haliburton,Sacramento Kings,NBA Rookie of the Month,,2020-21,2/1/2021,,West,Award,Kia Motors,KIRMO,
+2,1630169,Tyrese,Haliburton,Sacramento Kings,All-Rookie Team,1,2020-21,,,West,Award,Kia Motors,KIART,
+3,1630169,Tyrese,Haliburton,Indiana Pacers,NBA Player of the Week,,2022-23,,2022-11-14T00:00:00,East,Award,Kia Motors,KIPWK,
+4,1630169,Tyrese,Haliburton,Indiana Pacers,NBA Player of the Week,,2023-24,,2023-12-25T00:00:00,East,Award,Kia Motors,KIPWK,
+5,1630169,Tyrese,Haliburton,Indiana Pacers,NBA In-Season Tournament All-Tournament,1,2023-24,,,East,Award,Kia Motors,KIANT,
+6,1630169,Tyrese,Haliburton,Indiana Pacers,All-NBA,3,2023-24,,,East,Award,Kia Motors,KIANT,
+7,1630169,Tyrese,Haliburton,,NBA All-Star,,2023-24,,,,Award,All-Star,,
+8,1630169,Tyrese,Haliburton,,NBA All-Star,,2022-23,,,,Award,All-Star,,
+9,1630169,Tyrese,Haliburton,USA,Olympic Gold Medal,,2024,,,,Award,Olympic,Gold,
