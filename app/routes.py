@@ -54,6 +54,7 @@ def dash():
 def player_fullscreen(player_name):
     player_name_clean = player_name.replace('_', ' ')
     player_id = stat_server.get_id_from_name(player_name_clean)
+    player_img = f"https://cdn.nba.com/headshots/nba/lastest/260x190/{player_id}.png"
     player_number = stat_server.get_player_number(player_id)
     team_name = stat_server.get_team_name(player_id)
     player_pos = stat_server.get_player_position(player_id)
@@ -62,6 +63,7 @@ def player_fullscreen(player_name):
     df_awards = stat_server.get_player_awards(player_id)
     return render_template('player_fullscreen.html',
                            player_name=player_name_clean,
+                           player_img=player_img,
                            player_id=player_id,
                            player_number=player_number,
                            player_position=player_pos,
