@@ -126,7 +126,11 @@ def create_team_roster_csv(team_id):
 
 
 def get_teamroster_df(team_id):
-    create_team_roster_csv(team_id)
+    try:
+        create_team_roster_csv(team_id)
+    except Exception as e:
+        print(e)
+
 
     df = pd.read_csv(f'./app/stats/CSVs/teamrosters/{team_id}.csv')
 
