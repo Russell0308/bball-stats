@@ -19,18 +19,6 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 
 </p>
 </div>
-<div id='awardstable'>
-{% for table in tablePawards %}
-<table>
-	<thead>
-	</thead>
-	<tbody>
-		{{ table|safe }}
-	</tbody>
-</table>
-{% endfor %}
-</div>
-
 </div>
 
 <div id='Right-Column'
@@ -51,6 +39,19 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 </table>
 {% endfor %}
 </div>
+<div id='awardstable'>
+{% for table in tablePawards %}
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		{{ table|safe }}
+	</tbody>
+</table>
+{% endfor %}
+</div>
+
+
 </div>
 
 

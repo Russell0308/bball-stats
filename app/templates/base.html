@@ -9,8 +9,19 @@
 </head>
 
 <body>
-	<div id='nav-bar'>
-	</div>
+	<nav id='nav-bar'>
+		<form action='/dash' method='POST'>
+		<button type='submit'>Dash</button>
+		</form>
+
+		<form action='/teams' method='POST'>
+		<button type='submit'>Teams</button>
+		</form>
+
+		<form action='/' method='POST'>
+		<button type='submit'>24-25</button>
+		</form>
+	</nav>
 
 	{% block content %}
 	{% endblock %}

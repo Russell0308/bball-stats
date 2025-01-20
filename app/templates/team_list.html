@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% for team in team_list %}
+<p>{{ team|safe }}</p>
+{% endfor %}
+
+
+{% endblock %}

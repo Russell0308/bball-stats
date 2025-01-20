@@ -82,6 +82,28 @@ def player_fullscreen(player_name):
                                                     header=True)])
 
 
+# Team Pages
+@main.route('/teams', methods=['GET', 'POST'])
+def team_list():
+    team_df = stat_server.get_teams_data()
+    return render_template('team_list.html',
+                           team_list=[team_df.to_html(classes='table',
+                                                     escape=False,
+                                                     index=False,
+                                                     header=True)])
+
+
+@main.route('/teams/<team_name>')
+def team_fullscreen(team_name):
+    full_name, abbreviation, city, state, year_founded = stat_server.get_team_data_df(team_name)
+    return render_template('team_fullscreen.html', 
+                           team_name=team_name,
+                           team_abr=abbreviation,
+                           team_city=city,
+                           team_state=state,
+                           year_founded=year_founded)
+
+
 
 
 

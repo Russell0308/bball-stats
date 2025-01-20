@@ -303,6 +303,43 @@ def get_season_awardwinners(season):
     return display_awards
 
 
+def get_teams_data():
+    df = statc.get_teams_df()
+    df[' '] = df['abbreviation']
+    df['Team Names'] = df['full_name']
+    droplist = ['Unnamed: 0', 'id', 'full_name', 'abbreviation', 'nickname', 'city', 'state', 'year_founded']
+    for i in droplist:
+        df.drop(i, axis=1, inplace=True)
+
+    team_links_list = []
+
+    for x in df['Team Names']:
+        team_links = f'''<a href=" { url_for('main.team_fullscreen', team_name=x) } ">{x}</a>'''
+        team_links_list.append(team_links)
+
+    df['Team Names'] = team_links_list
+
+
+
+    return df
+
+
+
+def get_team_data_df(team_name):
+    df = statc.get_teams_df()
+    df = df[df['full_name'] == team_name]
+
+    full_name = df['full_name'].iloc[0]
+    abbreviation = df['abbreviation'].iloc[0]
+    nickname = df['nickname'].iloc[0]
+    city = df['city'].iloc[0]
+    state = df['state'].iloc[0]
+    year_founded = df['year_founded'].iloc[0]
+
+    return full_name, abbreviation, city, state, year_founded
+
+
+
 
 
 

@@ -39,3 +39,8 @@
 #dash_search_bar{
 	height: 18px;
 }
+
+#nav-bar{
+	display: flex;
+	justify content: center;
+}
