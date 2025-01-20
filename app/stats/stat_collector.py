@@ -154,6 +154,16 @@ def get_teams_df():
     return teams_df
 
 
+def get_team_id_from_team_name(name):
+    df = get_teams_df()
+
+    df = df[df['full_name'] == name]
+    id_ = df['id'].iloc[0]
+
+    return id_
+
+
+
 # Search results data
 def create_search_csv(df):
     if os.path.exists('./app/stats/CSVs/search.csv'):

@@ -319,6 +319,8 @@ def get_teams_data():
 
     df['Team Names'] = team_links_list
 
+    print(df)
+
 
 
     return df
@@ -336,7 +338,17 @@ def get_team_data_df(team_name):
     state = df['state'].iloc[0]
     year_founded = df['year_founded'].iloc[0]
 
-    return full_name, abbreviation, city, state, year_founded
+
+    team_id = statc.get_team_id_from_team_name(team_name)
+
+    roster = statc.get_teamroster_df(team_id)
+    
+    drop_list = ['TeamID', 'SEASON', 'LeagueID', 'NICKNAME', 'PLAYER_SLUG', 'BIRTH_DATE', 'PLAYER_ID']
+
+    for i in drop_list:
+        roster.drop(i, inplace=True, axis=1)
+
+    return full_name, abbreviation, city, state, year_founded, roster
 
 
 

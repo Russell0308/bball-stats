@@ -9,4 +9,15 @@
 <p>{{ year_founded }}</p>
 
 
+{% for player in roster_df %}
+<table>
+	<thead>
+	</thead>
+	<tbody>
+		{{ player|safe }}
+	</tbody>
+</table>
+{% endfor %}
+
+
 {% endblock %}

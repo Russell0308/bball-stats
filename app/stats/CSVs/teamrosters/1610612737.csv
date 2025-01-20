@@ -1,0 +1,19 @@
+TeamID,SEASON,LeagueID,PLAYER,NICKNAME,PLAYER_SLUG,NUM,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,AGE,EXP,SCHOOL,PLAYER_ID,HOW_ACQUIRED
+1610612737,2024,00,Jalen Johnson,Jalen,jalen-johnson,1,F,6-8,219,"DEC 18, 2001",23.0,3,Duke,1630552,#20 Pick in 2021 Draft
+1610612737,2024,00,Keaton Wallace,Keaton,keaton-wallace,2,G,6-3,185,"FEB 26, 1999",25.0,R,Texas-San Antonio,1630811,Signed on 09/29/23
+1610612737,2024,00,Kobe Bufkin,Kobe,kobe-bufkin,4,G,6-4,195,"SEP 21, 2003",21.0,1,Michigan,1641723,#15 Pick in 2023 Draft
+1610612737,2024,00,Dyson Daniels,Dyson,dyson-daniels,5,G,6-7,199,"MAR 17, 2003",21.0,2,NBA G League Ignite,1630700,Traded from NOP on 07/06/24
+1610612737,2024,00,David Roddy,David,david-roddy,8,F,6-4,255,"MAR 27, 2001",23.0,2,Colorado State,1631223,Traded from PHX on 07/29/24
+1610612737,2024,00,Zaccharie Risacher,Zaccharie,zaccharie-risacher,10,F,6-8,200,"APR 08, 2005",19.0,R,JL Bourg-en-Bresse,1642258,#1 Pick in 2024 Draft
+1610612737,2024,00,Trae Young,Trae,trae-young,11,G,6-1,164,"SEP 19, 1998",26.0,6,Oklahoma,1629027,Draft Rights Traded from DAL on 06/21/18
+1610612737,2024,00,De'Andre Hunter,De'Andre,deandre-hunter,12,F-G,6-8,221,"DEC 02, 1997",27.0,5,Virginia,1629631,Draft Rights Traded from NOP on 07/07/19
+1610612737,2024,00,Bogdan Bogdanović,Bogdan,bogdan-bogdanović,13,G,6-5,225,"AUG 18, 1992",32.0,7,Fenerbahce,203992,Signed on 11/25/20
+1610612737,2024,00,Clint Capela,Clint,clint-capela,15,C,6-10,256,"MAY 18, 1994",30.0,10,Elan Chalon,203991,Traded from HOU on 02/05/20
+1610612737,2024,00,Onyeka Okongwu,Onyeka,onyeka-okongwu,17,F-C,6-10,240,"DEC 11, 2000",24.0,4,Southern California,1630168,#6 Pick in 2020 Draft
+1610612737,2024,00,Mouhamed Gueye,Mouhamed,mouhamed-gueye,18,F,6-10,210,"NOV 09, 2002",22.0,1,Washington State,1631243,Draft Rights Traded from BOS on 06/28/23
+1610612737,2024,00,Larry Nance Jr.,Larry,larry-nance-jr,22,F-C,6-8,245,"JAN 01, 1993",32.0,9,Wyoming,1626204,Traded from NOP on 07/06/24
+1610612737,2024,00,Garrison Mathews,Garrison,garrison-mathews,24,G,6-6,215,"OCT 24, 1996",28.0,5,Lipscomb,1629726,Traded from HOU on 02/09/23
+1610612737,2024,00,Dominick Barlow,Dominick,dominick-barlow,26,F,6-8,215,"MAY 26, 2003",21.0,2,Overtime Elite,1631230,Signed on 07/30/24
+1610612737,2024,00,Vít Krejčí,Vít,vít-krejčí,27,G,6-8,195,"JUN 19, 2000",24.0,3,Zaragoza,1630249,Signed on 12/22/23
+1610612737,2024,00,Daeqwon Plowden,Daeqwon,daeqwon-plowden,29,G-F,6-6,216,"AUG 29, 1998",26.0,R,Bowling Green,1631342,Signed on 09/27/24
+1610612737,2024,00,Cody Zeller,Cody,cody-zeller,40,F-C,6-11,240,"OCT 05, 1992",32.0,11,Indiana,203469,Traded from NOP on 07/06/24

@@ -1,0 +1,18 @@
+TeamID,SEASON,LeagueID,PLAYER,NICKNAME,PLAYER_SLUG,NUM,POSITION,HEIGHT,WEIGHT,BIRTH_DATE,AGE,EXP,SCHOOL,PLAYER_ID,HOW_ACQUIRED
+1610612755,2024,00,Tyrese Maxey,Tyrese,tyrese-maxey,0,G,6-2,200,"NOV 04, 2000",24.0,4,Kentucky,1630178,#21 Pick in 2020 Draft
+1610612755,2024,00,Reggie Jackson,Reggie,reggie-jackson,00,G,6-2,208,"APR 16, 1990",34.0,13,Boston College,202704,Signed on 07/30/24
+1610612755,2024,00,KJ Martin,KJ,kj-martin,1,F,6-6,215,"JAN 06, 2001",24.0,4,IMG Academy (FL),1630231,Traded from LAC on 11/01/23
+1610612755,2024,00,Andre Drummond,Andre,andre-drummond,5,C,6-11,279,"AUG 10, 1993",31.0,12,Connecticut,203083,Signed on 07/07/24
+1610612755,2024,00,Kyle Lowry,Kyle,kyle-lowry,7,G,6-0,196,"MAR 25, 1986",38.0,18,Villanova,200768,Signed on 02/13/24
+1610612755,2024,00,Paul George,Paul,paul-george,8,F,6-8,220,"MAY 02, 1990",34.0,14,Fresno State,202331,Signed on 07/06/24
+1610612755,2024,00,Kelly Oubre Jr.,Kelly,kelly-oubre-jr,9,F-G,6-8,203,"DEC 09, 1995",29.0,9,Kansas,1626162,Signed on 09/26/23
+1610612755,2024,00,Jeff Dowtin Jr.,Jeff,jeff-dowtin-jr,11,G,6-3,177,"MAY 10, 1997",27.0,3,Rhode Island,1630288,Signed on 03/02/24
+1610612755,2024,00,Ricky Council IV,Ricky,ricky-council-iv,14,G,6-6,207,"AUG 03, 2001",23.0,1,Arkansas,1641741,Signed on 07/01/23
+1610612755,2024,00,Caleb Martin,Caleb,caleb-martin,16,F,6-5,205,"SEP 28, 1995",29.0,5,Nevada,1628997,Signed on 07/06/24
+1610612755,2024,00,Justin Edwards,Justin,justin-edwards,19,F,6-7,203,"DEC 16, 2003",21.0,R,Kentucky,1642348,Signed on 07/04/24
+1610612755,2024,00,Jared McCain,Jared,jared-mccain,20,G,6-3,195,"FEB 20, 2004",20.0,R,Duke,1642272,#16 Pick in 2024 Draft
+1610612755,2024,00,Joel Embiid,Joel,joel-embiid,21,C-F,7-0,280,"MAR 16, 1994",30.0,8,Kansas,203954,#3 Pick in 2014 Draft
+1610612755,2024,00,Pete Nance,Pete,pete-nance,22,F,6-10,225,"FEB 19, 2000",24.0,1,North Carolina,1631250,Signed on 12/03/24
+1610612755,2024,00,Eric Gordon,Eric,eric-gordon,23,G,6-3,215,"DEC 25, 1988",36.0,16,Indiana,201569,Signed on 07/10/24
+1610612755,2024,00,Guerschon Yabusele,Guerschon,guerschon-yabusele,28,F,6-8,265,"DEC 17, 1995",29.0,2,"Rouen, France",1627824,Signed on 08/29/24
+1610612755,2024,00,Adem Bona,Adem,adem-bona,30,F,6-10,235,"MAR 28, 2003",21.0,R,UCLA,1641737,#41 Pick in 2024 Draft

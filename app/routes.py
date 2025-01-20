@@ -95,8 +95,12 @@ def team_list():
 
 @main.route('/teams/<team_name>')
 def team_fullscreen(team_name):
-    full_name, abbreviation, city, state, year_founded = stat_server.get_team_data_df(team_name)
+    full_name, abbreviation, city, state, year_founded, roster = stat_server.get_team_data_df(team_name)
     return render_template('team_fullscreen.html', 
+                           roster_df=[roster.to_html(classes='table',
+                                                     escape=False,
+                                                     index=False, 
+                                                     header=True)],
                            team_name=team_name,
                            team_abr=abbreviation,
                            team_city=city,
