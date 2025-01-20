@@ -7,6 +7,8 @@ import pandas as pd
 
 import os
 
+import urllib.request
+
 
 # Basic player data
 
@@ -161,6 +163,22 @@ def get_team_id_from_team_name(name):
     id_ = df['id'].iloc[0]
 
     return id_
+
+
+def get_team_logos(team_id):
+    link = f"https://cdn.nba.com/logos/nba/{team_id}/primary/l/logo.svg"
+
+    print(link)
+
+    save_path = f"./app/static/assets/{team_id}/{team_id}.svg"
+
+    urllib.request.urlretrieve(link, save_path)
+
+    return link
+
+
+
+    
 
 
 
