@@ -319,10 +319,6 @@ def get_teams_data():
 
     df['Team Names'] = team_links_list
 
-    print(df)
-
-
-
     return df
 
 
