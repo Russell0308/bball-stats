@@ -47,9 +47,9 @@ def get_search_result_dash(user_query):
         player_name = i
 
         player_row = players_df[players_df['full_name'] == player_name]
-        player_id = player_row['ids'].iloc[0] # Get player id
+        player_id = player_row['ids'].iloc[0]
 
-        players_team_id = statc.get_players_team_id(player_id) # Get players team id
+        players_team_id = statc.get_players_team_id(player_id)
 
         teams = pd.DataFrame(statc.get_teams_df())
         teams = teams[teams['id'] == players_team_id]
@@ -356,38 +356,6 @@ def get_team_data_df(team_name):
         roster.drop(i, inplace=True, axis=1)
 
     return full_name, abbreviation, city, state, year_founded, roster
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
