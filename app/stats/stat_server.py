@@ -358,4 +358,3 @@ def get_team_data_df(team_name):
     return full_name, abbreviation, city, state, year_founded, roster
 
 
-
