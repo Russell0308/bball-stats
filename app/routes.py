@@ -15,7 +15,7 @@ import datetime
 year = str(datetime.date.today())[:4]
 season = str(int(year) - 1) + '-' + year[2:]
 
-season = '2023-24'
+season = '2024-25'
 
 
 main = Blueprint('main', __name__, './main/static/assets')
