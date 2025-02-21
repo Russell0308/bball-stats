@@ -5,3 +5,4 @@ __pycache__/
 notebooks/.ipynb_checkpoints/
 stats/__pycache__/
 removable.py
+app/stats/CSVs

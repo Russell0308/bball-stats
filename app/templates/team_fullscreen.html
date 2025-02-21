@@ -4,9 +4,10 @@
 
 {% block content %}
 
-<p>{{ team_abr }}</p>
+<p>{{ team_name }}</p>
 <p>{{ team_city }}, {{team_state}}</p>
-<p>{{ year_founded }}</p>
+<p>Founded: {{ year_founded }}</p>
+<p>Coach: </p>
 
 
 {% for player in roster_df %}

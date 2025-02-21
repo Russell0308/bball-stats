@@ -340,6 +340,13 @@ def get_team_data_df(team_name):
 
     roster = statc.get_teamroster_df(team_id)
 
+    roster['Acquired'] = roster['HOW_ACQUIRED']
+    roster['Age'] = [int(x) for x in roster['AGE']]
+    roster['Pos'] = roster['POSITION']
+    roster['#'] = roster['NUM']
+
+    roster.drop(columns=['HOW_ACQUIRED', 'SCHOOL', 'AGE', 'POSITION', 'NUM'], inplace=True)
+
     player_names = list(roster['PLAYER'])
 
     players_links = []
