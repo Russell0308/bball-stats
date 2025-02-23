@@ -11,7 +11,6 @@ import urllib.request
 
 
 # Basic player data
-
 def create_basic_player_data_csv():
     # Does file exist?
     if os.path.isfile('./app/stats/CSVs/basic_player_data.csv') == True:
@@ -114,7 +113,6 @@ def get_player_profile_df(player_id, df_name):
 
     df = pd.read_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/{df_name}.csv')
 
-
     return df
 
 
@@ -175,11 +173,6 @@ def get_team_logos(team_id):
     urllib.request.urlretrieve(link, save_path)
 
     return link
-
-
-
-    
-
 
 
 # Search results data
@@ -243,7 +236,6 @@ def create_player_awards_csv(player_id):
         df.to_csv(f'./app/stats/CSVs/playerprofiles/{player_id}/awards.csv')
     except:
         print(Exception)
-
 
 
 def get_player_awards_df(player_id):
