@@ -36,7 +36,6 @@ def dash():
     award_winners = stat_server.get_season_awardwinners(season)
 
     return render_template('dash.html',
-                           champ_img=image,
                            season=season,
                            award_winners=award_winners,
                            tables=[df.to_html(classes='table',
@@ -60,7 +59,6 @@ def player_fullscreen(player_name):
     df_awards = stat_server.get_player_awards(player_id)
     return render_template('player_fullscreen.html',
                            player_name=player_name_clean,
-                           player_img=player_img,
                            player_id=player_id,
                            player_number=player_number,
                            player_position=player_pos,
