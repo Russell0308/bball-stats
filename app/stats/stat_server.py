@@ -19,7 +19,6 @@ players_df = players_df[players_df['is_active'] == True]
 players_df.drop('is_active', inplace=True, axis=1)
 
 
-### I HATE this function vvv ###
 def get_search_result_dash(user_query):
     user_search_result = process.extract(user_query, players_df['full_name'], limit=10) #Fuzzy find top ten active players names using user search 'name'. 
 

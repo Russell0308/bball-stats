@@ -35,8 +35,6 @@ def dash():
 
     award_winners = stat_server.get_season_awardwinners(season)
 
-    image = 'https://cdn.nba.com/logos/nba/1610612738/primary/l/logo.svg' ### api for celtics logo image
-
     return render_template('dash.html',
                            champ_img=image,
                            season=season,
@@ -54,7 +52,6 @@ def dash():
 def player_fullscreen(player_name):
     player_name_clean = player_name.replace('_', ' ')
     player_id = stat_server.get_id_from_name(player_name_clean)
-    player_img = f"https://cdn.nba.com/headshots/nba/lastest/260x190/{player_id}.png"
     player_number = stat_server.get_player_number(player_id)
     team_name = stat_server.get_team_name(player_id)
     player_pos = stat_server.get_player_position(player_id)
