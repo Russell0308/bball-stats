@@ -15,15 +15,20 @@
 }
 
 #player_info{
-	float:left;
 }
 
 #Left_Column{
+	display:flex;
+	align-items:column;
 	float:left;
 }
 
-#awardstable{
-	float:left
+#Right_Column{
+	float:right;
+}
+
+#awardslist{
+	border-top:1px;
 }
 
 #champ_logo{

@@ -206,19 +206,19 @@ def get_player_awards(player_id):
             player_of_the_month += 1
 
 
-    new_df['Olympic Gold Medal'] = olympic_gold_medal
-    new_df['NBA Champion'] = nba_champion
-    new_df['All-Star'] = nba_allstar
-    new_df['All-NBA'] = all_nba
-    new_df['MVP'] = mvp
-    new_df['Finals MVP'] = fmvp
-    new_df['All-Rookie Team'] = all_rookie_team
-    new_df['Rookie of the Month'] = rookie_of_the_month
-    new_df['Player of the Week'] = player_of_the_week
-    new_df['Player of the Month'] = player_of_the_month
+    OGM = f'Olympic Gold Medals: {olympic_gold_medal}x' 
+    NBAC = f'NBA Championships: {nba_champion}x'
+    AS = f'All-Stars: {nba_allstar}x'
+    ANBA = f'All-NBAs: {all_nba}x'
+    MVP = f'MVPs: {mvp}x'
+    FMVP = f'Finals MVPs: {fmvp}x'
+    ART = f'All-Rookie Teams: {all_rookie_team}x'
+    RTM = f'Rookie of the Months: {rookie_of_the_month}x'
+    PTW = f'Player of the Weeks: {player_of_the_week}x'
+    PTM = f'Player of the Months: {player_of_the_month}x'
 
 
-    return new_df
+    return OGM, NBAC, AS, ANBA, MVP, FMVP, ART, RTM, PTW, PTM
     
 
 def get_season_awardwinners(season):

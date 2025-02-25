@@ -5,7 +5,7 @@
 {% block content %}
 <div id='Left-Column'>
 
-<div id='player_info'>
+	<div id='player_info'>
 	<img src='{{player_img}}' alt='Picture of {{player_name}}'>
 <p>{{player_name}} <br>
 {{player_position}} | #{{player_number}} <br>
@@ -13,7 +13,15 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 {{team_name}}
 
 </p>
-</div>
+	</div>
+	<div id='awardslist'>
+{% for award in listPawards %}
+
+<p>{{ award }}</p>
+
+{% endfor %}
+	</div>
+
 </div>
 
 <div id='Right-Column'
@@ -26,17 +34,6 @@ Height: {{player_height}} Weight: {{player_weight}}lbs <br>
 -->
 <h3>Career per game stats</h3>
 {% for table in tablepgstats %}
-<table>
-	<thead>
-	</thead>
-	<tbody>
-		{{ table|safe }}
-	</tbody>
-</table>
-{% endfor %}
-</div>
-<div id='awardstable'>
-{% for table in tablePawards %}
 <table>
 	<thead>
 	</thead>

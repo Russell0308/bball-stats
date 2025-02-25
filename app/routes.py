@@ -56,7 +56,7 @@ def player_fullscreen(player_name):
     player_pos = stat_server.get_player_position(player_id)
     height, weight = stat_server.get_player_height_weight(player_id)
     df = stat_server.get_career_per_game_by_season(player_id)
-    df_awards = stat_server.get_player_awards(player_id)
+    awards_list = stat_server.get_player_awards(player_id)
     return render_template('player_fullscreen.html',
                            player_name=player_name_clean,
                            player_id=player_id,
@@ -65,12 +65,7 @@ def player_fullscreen(player_name):
                            player_height=height,
                            player_weight=weight,
                            team_name=team_name,
-                           tablePawards=[df_awards.to_html(
-                               classes='table',
-                               escape=False,
-                               index=False,
-                               header=True)
-                            ],
+                           listPawards=awards_list,
                            tablepgstats=[df.to_html(classes='table',
                                                     escape=False,
                                                     index=False,
