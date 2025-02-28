@@ -76,7 +76,6 @@ def get_search_result_dash(user_query):
 
     result_df.drop('full_name', axis=1, inplace=True)
     
-
     return result_df.iloc[:5]
 
 
@@ -182,7 +181,6 @@ def get_player_awards(player_id):
     player_of_the_week = 0
     player_of_the_month = 0
 
-
     for i in list(df['DESCRIPTION']):
         if i == 'Olympic Gold Medal':
             olympic_gold_medal += 1
@@ -205,7 +203,6 @@ def get_player_awards(player_id):
         elif i == 'NBA Player of the Month':
             player_of_the_month += 1
 
-
     OGM = f'Olympic Gold Medals: {olympic_gold_medal}x' 
     NBAC = f'NBA Championships: {nba_champion}x'
     AS = f'All-Stars: {nba_allstar}x'
@@ -216,7 +213,6 @@ def get_player_awards(player_id):
     RTM = f'Rookie of the Months: {rookie_of_the_month}x'
     PTW = f'Player of the Weeks: {player_of_the_week}x'
     PTM = f'Player of the Months: {player_of_the_month}x'
-
 
     return OGM, NBAC, AS, ANBA, MVP, FMVP, ART, RTM, PTW, PTM
     
@@ -234,8 +230,6 @@ def get_season_awardwinners(season):
     COTY = 'NBA Coach of the Year'
     MIP = 'NBA Most Improved Player'
     SMOTY = 'NBA Sixth Man of the Year'
-
-
 
     for i in range(len(id_df)):
         player_id = id_df['ids'][i]
@@ -297,9 +291,6 @@ def get_season_awardwinners(season):
         
         display_awards.append(winner)
 
-
-
-
     return display_awards
 
 
@@ -320,7 +311,6 @@ def get_teams_data():
     df['Team Names'] = team_links_list
 
     return df
-
 
 
 def get_team_data_df(team_name):
